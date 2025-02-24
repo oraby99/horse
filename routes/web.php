@@ -31,7 +31,7 @@ use App\Http\Controllers\website\Auth\ForgetPasswordController;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
-*/
+*/ 
 ///////////////////////////////WEBSITE////////////////////////////////////
     Route::group(['middleware'=>'guest'],function(){
     Route::get('login',[AuthController::class,'loginView'])->name('login.view');
