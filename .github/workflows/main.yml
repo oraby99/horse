@@ -13,4 +13,4 @@ jobs:
       with:
         server:   ${{ secrets.MyFtpServer }}
         username: ${{ secrets.myFtpUserName }}
-        password: ${{ secrets.myFtpPassword }}
+        password: wCZ6UP4F=$]8
