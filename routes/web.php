@@ -21,6 +21,7 @@ use App\Http\Controllers\Dashboard\Admin\AdminController;
 use App\Http\Controllers\Dashboard\AdvertismentController;
 use App\Http\Controllers\TapController;
 use App\Http\Controllers\website\Auth\ForgetPasswordController;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,30 @@ use App\Http\Controllers\website\Auth\ForgetPasswordController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */ 
+
+
+Route::get('/run-commands', function () {
+    if (request('key') !== env('APP_KEY')) {
+        abort(403, 'Unauthorized');
+    }
+
+    $commands = [
+        'optimize:clear',
+        'storage:link',
+        //'migrate',
+        //'composer update'
+    ];
+
+    $output = [];
+
+    foreach ($commands as $command) {
+        Artisan::call($command);
+        $output[$command] = Artisan::output();
+    }
+
+    return response()->json($output);
+});
+
 ///////////////////////////////WEBSITE////////////////////////////////////
     Route::group(['middleware'=>'guest'],function(){
     Route::get('login',[AuthController::class,'loginView'])->name('login.view');
