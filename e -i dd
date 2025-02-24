@@ -1,0 +1,880 @@
+[33mcommit 4de70fb4585a1b61142a8cd53151c29b356a5683[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Thu Mar 14 02:35:30 2024 +0200
+
+    Remove secret information from TapController.php
+
+[33mcommit 44c1a19be43bc8ef5a4a71c60af0a6eeeae15d1e[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Thu Mar 14 02:20:50 2024 +0200
+
+    ttt
+
+[33mcommit e576e4e75afd3dc45389a927e8f3bd8be4f3a524[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Thu Mar 14 02:07:37 2024 +0200
+
+    dd
+
+[33mcommit 8f197f2595b4994da73f9f524fce173e8eb12795[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Thu Mar 14 01:52:53 2024 +0200
+
+    en
+
+[33mcommit 87ef5c596bed13e1cccf31b2bfd5a25cbb38bcc0[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Thu Mar 14 01:38:08 2024 +0200
+
+    tst
+
+[33mcommit 0a6a703242553db6998b6459df27c6a38e5b047a[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Thu Mar 14 01:36:00 2024 +0200
+
+    tap
+
+[33mcommit b22d7acba6eb95134c3a7eb868d27a0254eefc59[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Thu Mar 14 01:25:04 2024 +0200
+
+    tap
+
+[33mcommit 8229a663bcefb4ed30baa38a0ed969a893b2ee4c[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Tue Mar 12 17:27:32 2024 +0200
+
+    ads details
+
+[33mcommit 7ce42466a19c74f009ef19e85875c405f2007401[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Tue Mar 12 16:31:38 2024 +0200
+
+    is sold
+
+[33mcommit 48883fbc797ac52b0d9199040d1966f21e171666[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Mon Mar 11 02:08:15 2024 +0200
+
+    crt
+
+[33mcommit d3d831470593b867ef03e982f6d45435bcdef490[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sun Mar 10 03:01:50 2024 +0200
+
+    scr
+
+[33mcommit 8c7733a575b48f8b3176f31e2312daccc6a1402f[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sun Mar 10 02:57:43 2024 +0200
+
+    images
+
+[33mcommit 21430795f2ab319d8be9ddfd691bbca487595d00[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sun Mar 10 02:40:33 2024 +0200
+
+    img
+
+[33mcommit b1fb43e6797fcd7d2ad309070c98d9b8114e534a[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sun Mar 10 02:35:35 2024 +0200
+
+    image
+
+[33mcommit c5b3c8129ec84848910d1a6ae0630c4e8d0caef7[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sun Mar 10 02:17:59 2024 +0200
+
+    details
+
+[33mcommit 6f383739ed407d3ffc62376e6a641dc981def51f[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sat Mar 2 23:35:16 2024 +0200
+
+    add ads
+
+[33mcommit 6c82d37bcd7cf25467f9129511dedadeb446a6fc[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Mon Feb 12 02:21:33 2024 +0200
+
+    dd
+
+[33mcommit c92e1a5da67ad571f0c6521ac52bbaa8b86eff5d[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Mon Feb 12 02:09:26 2024 +0200
+
+    count
+
+[33mcommit f13e1595febd43e96236730b0ed30dd599a1cca6[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sat Feb 10 09:23:29 2024 +0200
+
+    crt
+
+[33mcommit c38c4b6de03bedacf5a4736a7c2ae2a5102e09b7[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Fri Feb 9 05:01:22 2024 +0200
+
+    main
+
+[33mcommit 8b03d2020dd8cc5f80789580d91dfb2e5d4594be[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Fri Feb 9 01:36:57 2024 +0200
+
+    updates
+
+[33mcommit 47ed907d0ce7fc3d5aa6667d94e6eb0a3ec99e30[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Fri Feb 9 00:40:55 2024 +0200
+
+    test push
+
+[33mcommit e23360841ab76134ac05087cbc8baf7df5af6e60[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Fri Feb 2 17:21:18 2024 +0200
+
+    int p
+
+[33mcommit fce431e29a513b1ee080c63a93552c725e64a05a[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Fri Feb 2 16:50:01 2024 +0200
+
+    stock
+
+[33mcommit 4d8295ba955c37697a4db62edba0ba5e7f0db34d[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Fri Feb 2 16:39:20 2024 +0200
+
+    qantity
+
+[33mcommit edcb512db08aae6230be6ac34c6f59c1e063dbf9[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Fri Feb 2 16:32:21 2024 +0200
+
+    product
+
+[33mcommit 1ebfb90394565e9adad786e092c14434f3be244d[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Fri Feb 2 16:25:03 2024 +0200
+
+    qantity
+
+[33mcommit c07e2b49e7502ee019fb829e289500a34021d0e9[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Fri Feb 2 15:54:25 2024 +0200
+
+    opt
+
+[33mcommit ebeac4c733258eadb66cfa81e5cb3e8536a07cae[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Fri Feb 2 15:43:11 2024 +0200
+
+    updates
+
+[33mcommit 6c9e93307749b47dadce847e3744089ed479a652[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Fri Feb 2 15:15:58 2024 +0200
+
+    update
+
+[33mcommit f670cd6a9dd8a2d65907bbe8c915ceb18f19d38d[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Thu Feb 1 06:10:42 2024 +0200
+
+    duration
+
+[33mcommit 407066ef171f4d95cda6314fdc0bbc4c4e476891[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Wed Jan 31 16:46:52 2024 +0200
+
+    levels
+
+[33mcommit 44be1cd48d9ee0264b87a418265efcbeb2a63d76[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Tue Jan 30 21:46:30 2024 +0200
+
+    updates
+
+[33mcommit 050a2fd6ff2aac6ae29b9975a4cd1526b6158bc3[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Mon Jan 29 20:32:09 2024 +0200
+
+    cart
+
+[33mcommit f92b8d5ce06be3150eec673d8b54a3454dec13b6[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Mon Jan 29 18:07:46 2024 +0200
+
+    cart
+
+[33mcommit 316a49cef457a9d9c68f98b0150c95e5b200288c[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Tue Jan 16 12:50:41 2024 +0200
+
+    reg
+
+[33mcommit 81bbc7ec077a9b1a325fbab4cb056a719134d31c[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Tue Jan 16 12:05:49 2024 +0200
+
+    auth
+
+[33mcommit fecc13c09bb92ef2cd7d4357a9147e9010296aed[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Mon Jan 15 15:22:28 2024 +0200
+
+    orrders
+
+[33mcommit 59325ef145b343e2c48e819440abc6d5f48bf6ce[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Mon Jan 15 14:49:09 2024 +0200
+
+    orders
+
+[33mcommit f7d07feb85d32a5b42f5a0e1f9e875ca76b18d8b[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Mon Jan 15 00:53:20 2024 +0200
+
+    upload
+
+[33mcommit 01e771e32cf688c7308cba0f127eeccb7bd915f4[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Mon Jan 15 00:48:38 2024 +0200
+
+    llast
+
+[33mcommit dc10371992d8de2ba28e16c98fb10678c53cbecf[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sun Jan 14 17:45:30 2024 +0200
+
+    u
+
+[33mcommit 47870926a2c87442a61ce7db00e509c0b32d0626[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sun Jan 14 17:44:20 2024 +0200
+
+    update
+
+[33mcommit 5ea0639fa8e87bf3c510af4eb5f534f5bcc044a5[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sun Jan 14 17:19:28 2024 +0200
+
+    user
+
+[33mcommit 63fdb620ac59855479b76550bdc55ec15c68d600[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sun Jan 14 17:18:24 2024 +0200
+
+    update
+
+[33mcommit 0373d1d06616306c7f2ac8aefd76b7324b6b87ca[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sun Jan 14 16:46:11 2024 +0200
+
+    test
+
+[33mcommit ab77d3bbd9804cd9154401e20f9418a7907373d2[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sun Jan 14 16:22:54 2024 +0200
+
+    plan
+
+[33mcommit 5bdab8a3abd17f80a76a5e10bc178c8ed7fae2c1[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sun Jan 14 16:21:54 2024 +0200
+
+    edit
+
+[33mcommit 580d4318b991e29662789c1dc9aa1dcaacbbb683[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sun Jan 14 15:34:50 2024 +0200
+
+    test up
+
+[33mcommit 845b2ba21e2594580fd39ce5aadc8f8e40734c2c[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sun Jan 14 14:37:01 2024 +0200
+
+    update
+
+[33mcommit 912ff596b1d2baa4ca4abb8fc952220f067f45bd[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sun Jan 14 14:23:16 2024 +0200
+
+    adss
+
+[33mcommit 2bc6095ba0f7b2cf4539ca0d2db6ef97e60c073b[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sun Jan 14 13:43:55 2024 +0200
+
+    test
+
+[33mcommit d3d9d7dafe7639c96d2bdc88fb3196838c58e918[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sun Jan 14 13:33:23 2024 +0200
+
+    user
+
+[33mcommit a8e16ed3d5034c2520ff1dd8bb3664b722e6a20c[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sun Jan 14 02:35:55 2024 +0200
+
+    order
+
+[33mcommit d4c46c9268f9444949ef61d7b812786fdf673748[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sun Jan 14 02:12:08 2024 +0200
+
+    last
+
+[33mcommit da37971725e211f96af0afd162af51acd3bfc388[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sat Jan 13 19:27:26 2024 +0200
+
+    test img
+
+[33mcommit 6640c5d82344207e14edc2469ef3d9d4aea0492e[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sat Jan 13 15:29:56 2024 +0200
+
+    videos
+
+[33mcommit ae27f3d1a4e6f69134e401cd66fa69bcbc8e595f[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sat Jan 13 14:38:51 2024 +0200
+
+    update
+
+[33mcommit 819564dbf16fc76b2b248b201ad4735b4b9726ef[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sat Jan 13 00:51:45 2024 +0200
+
+    test
+
+[33mcommit 9e527f121ca0d327a31c8779a6d6f6eb4fa1f73d[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sat Jan 13 00:37:32 2024 +0200
+
+    pr
+
+[33mcommit 6de2ff4fd3b48ea39a460f751decc16dc8033c55[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sat Jan 13 00:10:03 2024 +0200
+
+    update
+
+[33mcommit ca91813f10c4cee29398e9ccec95018c5fd116b8[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Fri Jan 12 23:58:02 2024 +0200
+
+    likinsta
+
+[33mcommit fa321a4b72388452fc4139d6d3d44cc20a1be5c4[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Thu Jan 11 14:45:56 2024 +0200
+
+    delete adress
+
+[33mcommit f997d8a0fdc3956bb777f1026153f075f5317fb6[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Thu Jan 11 14:40:58 2024 +0200
+
+    fav
+
+[33mcommit 4cc5de41778426d33b28c07ac34e6fcfbae7c92d[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Thu Jan 11 14:08:19 2024 +0200
+
+    ads
+
+[33mcommit f216927a5a8d7f074b3d5a0321be17e124a37aed[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Thu Jan 11 13:33:14 2024 +0200
+
+    passs
+
+[33mcommit c8c43c92a44bf97534b0b171248cec616b6c07d1[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Thu Jan 11 13:01:22 2024 +0200
+
+    pass
+
+[33mcommit e5a92fc5efc59af82f66a47f026cd465144918d0[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Thu Jan 11 02:19:33 2024 +0200
+
+    order
+
+[33mcommit dc6ff6a47edb2d6f752e0f9045ebfc82ebb145e5[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Thu Jan 11 01:59:05 2024 +0200
+
+    camp
+
+[33mcommit f7277c6738569e655dd61d54294b828dee67ab0d[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Mon Jan 8 19:03:03 2024 +0200
+
+    edit ads api
+
+[33mcommit 02f2de531b03527e5d0be03e1510e6bc2a6adf2a[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Mon Jan 8 16:03:55 2024 +0200
+
+    ads details
+
+[33mcommit 8e7d00ef03098c1e8389e98e6b9258c292414971[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Sun Jan 7 11:48:49 2024 +0200
+
+    Change Price Format in Model
+
+[33mcommit c160e12be43c3fad8d6cae2e6b66313f70a928fa[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Sun Jan 7 11:31:27 2024 +0200
+
+    Video Shoewr
+
+[33mcommit 583f1c0a2cd4be666b587be7b4e7ac305b5eaca3[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Sun Jan 7 11:27:02 2024 +0200
+
+    Video Shoewr
+
+[33mcommit b4fd4aec70603588f31223c613435972892bca0f[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Sun Jan 7 11:18:14 2024 +0200
+
+    Changes In Api
+
+[33mcommit 86b749c341823071209b9c3d55e9e431a3ffd459[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Fri Jan 5 22:23:55 2024 +0200
+
+    Set As Sold In Resource
+
+[33mcommit b4c74fbddc0f3e34a34df0baadfbd73d2e3e6a27[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Fri Jan 5 22:04:54 2024 +0200
+
+     Added endpoints to mark advertisments as sold or unsold.
+
+[33mcommit 7fda3e9ca9fbbce1e1a012437e398d22ea564c04[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Fri Jan 5 21:41:14 2024 +0200
+
+    merge
+
+[33mcommit db411f1b92d520ac4352be9e9a9e2a981d15c051[m
+Merge: d95641f 7c87e0e
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Fri Jan 5 21:39:25 2024 +0200
+
+    Merge branch 'main' of https://github.com/mohamedmagdy20/horse-station
+
+[33mcommit d95641f708242059ef414f218857b5cb3df01308[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Fri Jan 5 21:39:21 2024 +0200
+
+    merge with oraby
+
+[33mcommit 7c87e0ec223fa120cd438f880ab32213e1036ed2[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Thu Jan 4 03:58:10 2024 +0200
+
+    update
+
+[33mcommit 215bf4a75d3b0598f86b42daafc104dce938c24b[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Thu Jan 4 03:34:56 2024 +0200
+
+    update
+
+[33mcommit ee5b7bb6809c960d287f57a3d4a7e70e13efa6af[m
+Merge: b5e722f 420bb7c
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Thu Jan 4 03:31:32 2024 +0200
+
+    advertisement
+
+[33mcommit b5e722fbba516514fd00333e4ea958c85bc3ba3e[m[33m ([m[1;31morigin/dev-oraby[m[33m)[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Wed Jan 3 14:09:24 2024 +0200
+
+    test
+
+[33mcommit 420bb7c51a06d8688a5d54387d61124349679c06[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Wed Jan 3 06:33:31 2024 +0200
+
+    Handl Error
+
+[33mcommit 0bcc0ce04c7786a8e63c61c07790f956520976c2[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Wed Jan 3 06:29:27 2024 +0200
+
+    Add Favourite ID to Details
+
+[33mcommit eddde602335edc5b7e5ff79f9e697e7dfd32d279[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Wed Jan 3 05:31:08 2024 +0200
+
+    Update Address and Handle Api of Add , Delete Favourite
+
+[33mcommit 14cffbe7c941e567b41cc687cb244c6bbc48e1a0[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Wed Jan 3 05:04:59 2024 +0200
+
+    Handle Favourite Collection
+
+[33mcommit 54822fddf1121039e095e51d28486a31f4237ff1[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Wed Jan 3 04:43:17 2024 +0200
+
+    category by type
+
+[33mcommit c8eb4b09a62de323eb1d105da756189fae5bcb8a[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Wed Jan 3 04:38:49 2024 +0200
+
+    Favourites and Banners
+
+[33mcommit c1da292bf9c52c8630fd3a97250c91ff7d5743f2[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Wed Jan 3 03:14:24 2024 +0200
+
+    category by type
+
+[33mcommit 6d928f143645425c3b319b572c00404e14226b76[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Wed Jan 3 03:12:34 2024 +0200
+
+    category by type
+
+[33mcommit e0aa4935a8359b97e6996765efbaf98a937bcef1[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Wed Jan 3 02:35:48 2024 +0200
+
+    Make Validation of images
+
+[33mcommit d47c078d711165ecead672370194a8a389e2ed75[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Sat Dec 30 15:56:43 2023 +0200
+
+    Handle Exceptions in Localization and Currency of Price
+
+[33mcommit fc05488d36556ae4885742aceec2951b96f5edeb[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Wed Dec 27 09:46:22 2023 +0200
+
+    Charts and Profile Api
+
+[33mcommit 73a11499a372040b6394375d8127818b7b7125ca[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Wed Dec 27 01:28:48 2023 +0200
+
+    advertisment profile and change in register api
+
+[33mcommit 712e52ff2c6ce56eaf119c732f2a6c4dd4236d9b[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Tue Dec 26 08:03:49 2023 +0200
+
+    Search Result
+
+[33mcommit 99f8eef2bb4a6b00f5459bcf10d26323885b4504[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Tue Dec 26 07:46:23 2023 +0200
+
+    Add Address and Search
+
+[33mcommit f06f4a651e1237614b2b62919934aab66910f497[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Tue Dec 26 05:15:19 2023 +0200
+
+    Stock and Cart
+
+[33mcommit c206e6a705272cf8a76eff1aad86ec789504fddf[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Mon Dec 25 20:50:15 2023 +0200
+
+    Camps Crud and Register Api
+
+[33mcommit 350cd1fe67762dfae3bbb1d2aa96f4a288feaadb[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Mon Dec 18 06:53:10 2023 +0200
+
+    Modifiy in Route
+
+[33mcommit 18b62c3b33cdc179155c44ec7f4de4e7a2b93e4c[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Mon Dec 18 06:37:55 2023 +0200
+
+    Add Favourite Api
+
+[33mcommit 50911a34e54309cd86c7ef513be29e8cffbd9328[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Sat Dec 16 03:51:51 2023 +0200
+
+    Make Create Advertisment Api and Handle Change in Db and Dashboard
+
+[33mcommit 044e89bc7b524ed94dcb2cf836441548b5824c2d[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Wed Dec 13 06:08:04 2023 +0200
+
+    Api Get
+
+[33mcommit 7f665cfaef9421a4898c5f52cca2e7111b24255a[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Mon Dec 11 18:12:52 2023 +0200
+
+    Changes In Dashboard
+
+[33mcommit 5fac7133c065a21ee4b1be5a68e67f5401b9c32b[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Sun Dec 10 19:49:15 2023 +0200
+
+    Test Deploy
+
+[33mcommit 7d0950a9a5bb07009aeaa25987e08cba4c6bba86[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Sun Dec 10 19:44:55 2023 +0200
+
+    Test Deploy
+
+[33mcommit 22c6b4690678f041a291352dac6ff30f862c4f3a[m
+Merge: 85f9d09 0a1e234
+Author: Mohamed Magdy <86977873+mohamedmagdy20@users.noreply.github.com>
+Date:   Sun Dec 10 18:35:21 2023 +0200
+
+    Merge pull request #9 from mohamedmagdy20/magdy-dev
+    
+    Magdy dev
+
+[33mcommit 0a1e2347842764b349041a8fd05a160215e943fe[m[33m ([m[1;31morigin/magdy-dev[m[33m)[m
+Merge: 79cb22d 8be7eab
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Sun Dec 10 18:34:46 2023 +0200
+
+    Merge branch 'magdy-dev' of https://github.com/mohamedmagdy20/horse-station into magdy-dev
+
+[33mcommit 79cb22d093a4814f1cff202fa60a895f2c27bced[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Sun Dec 10 18:34:04 2023 +0200
+
+    Change in main.yml
+
+[33mcommit 85f9d09e353cc75fbd419e054accb7aa3b5cc0d8[m
+Merge: dcd4b64 f8393b2
+Author: Mohamed Magdy <86977873+mohamedmagdy20@users.noreply.github.com>
+Date:   Sun Dec 10 18:29:48 2023 +0200
+
+    Merge pull request #8 from mohamedmagdy20/stage
+    
+    Stage
+
+[33mcommit f8393b207b76ed8332c31cf75d79554d1380741d[m[33m ([m[1;31morigin/stage[m[33m)[m
+Merge: df94cde 8be7eab
+Author: Mohamed Magdy <86977873+mohamedmagdy20@users.noreply.github.com>
+Date:   Sat Dec 9 21:40:02 2023 +0200
+
+    Merge pull request #7 from mohamedmagdy20/magdy-dev
+    
+    Advertisment Grud and Users crud
+
+[33mcommit 8be7eab4e409fa021aa40ac640e8f16d621ad268[m
+Merge: 4b33c77 df94cde
+Author: Mohamed Magdy <86977873+mohamedmagdy20@users.noreply.github.com>
+Date:   Sat Dec 9 21:39:53 2023 +0200
+
+    Merge branch 'stage' into magdy-dev
+
+[33mcommit 4b33c7770069965c6d3e2e18741f6716af5c7d84[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Sat Dec 9 21:37:13 2023 +0200
+
+    Advertisment Grud and Users crud
+
+[33mcommit df94cdedc83b678b1ad26d01a6dabe173566bc64[m
+Merge: 7d0144b 2a670ef
+Author: Mohamed Magdy <86977873+mohamedmagdy20@users.noreply.github.com>
+Date:   Sat Dec 9 21:36:31 2023 +0200
+
+    Merge pull request #6 from mohamedmagdy20/dev-oraby
+    
+    camps
+
+[33mcommit 7d0144b1c4a46dc142902f85a429ced3f17d671c[m
+Merge: 89903e9 dde16c5
+Author: Mohamed Magdy <86977873+mohamedmagdy20@users.noreply.github.com>
+Date:   Sat Dec 9 21:35:55 2023 +0200
+
+    Merge pull request #5 from mohamedmagdy20/magdy-dev
+    
+    Magdy dev
+
+[33mcommit 2a670ef321a37e36b1204ea933e4271be0a1a8cf[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Sat Dec 9 19:12:06 2023 +0200
+
+    camps
+
+[33mcommit dde16c58da73305d3a0f128e4eb96255b19165ea[m
+Merge: 3273b67 dcd4b64
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Sat Dec 9 16:47:16 2023 +0200
+
+    Merge with Main
+
+[33mcommit dcd4b64618d89f8b5f25903cf2b571b1b89653ba[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Sat Dec 9 16:13:05 2023 +0200
+
+    Add User Foregin Key
+
+[33mcommit a4edcbef4c1ff791d8515a026cf74965c1c9b1f5[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Sat Dec 9 05:56:21 2023 +0200
+
+    modify on work flow file
+
+[33mcommit af18001eb8207d17e5b23804a0f405379330ed12[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Sat Dec 9 05:54:13 2023 +0200
+
+    Product Crud
+
+[33mcommit 897091cf5d21e104ae2ba97c0f4eb371645780bd[m
+Merge: e30e365 e15365c
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Sat Dec 9 05:48:38 2023 +0200
+
+    Merge branch 'main' of https://github.com/mohamedmagdy20/horse-station
+
+[33mcommit e30e3659cb14d5d59feb45c475c202dca06bbbed[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Sat Dec 9 05:48:18 2023 +0200
+
+    Product Crud
+
+[33mcommit e15365cb519b81b1d76bc884141a60e4f1615d8d[m
+Merge: 8510b20 89903e9
+Author: Mohamed Magdy <86977873+mohamedmagdy20@users.noreply.github.com>
+Date:   Sat Dec 9 05:46:56 2023 +0200
+
+    Merge pull request #4 from mohamedmagdy20/stage
+    
+    Stage
+
+[33mcommit 89903e9edcbec619d0589d5dc0c808c63d17d000[m
+Merge: 30fd3ec 8510b20
+Author: Mohamed Magdy <86977873+mohamedmagdy20@users.noreply.github.com>
+Date:   Sat Dec 9 05:46:48 2023 +0200
+
+    Merge branch 'main' into stage
+
+[33mcommit 30fd3ec928278236fd90ae515127ae104b4de02d[m
+Merge: 234b2e6 57a2c06
+Author: Mohamed Magdy <86977873+mohamedmagdy20@users.noreply.github.com>
+Date:   Sat Dec 9 05:44:05 2023 +0200
+
+    Merge pull request #3 from mohamedmagdy20/dev-oraby
+    
+    Dev oraby
+
+[33mcommit 8510b20c61c3d3d1ba71a303951d160247362f89[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Sat Dec 9 05:31:33 2023 +0200
+
+    Product Crud
+
+[33mcommit 57a2c06e89e9b0862a5edd062fc2952d8c4ab2f4[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Fri Dec 8 15:07:39 2023 +0200
+
+    plan and admin dashboard crud
+
+[33mcommit fd6d1299e2647050c4053f5c087837e2f33a108c[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Thu Dec 7 23:43:41 2023 +0200
+
+    EDIT Profile
+
+[33mcommit 234b2e687ff38a8f5fe57222dc9c75800577b670[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Wed Dec 6 22:31:31 2023 +0200
+
+    Fix Error On Deploy
+
+[33mcommit 703a053026cbf578e491d77de4acb4d270ffdfc9[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Wed Dec 6 22:26:24 2023 +0200
+
+    Permission
+
+[33mcommit b3c707ce843495a27c9d98439cd2ecdfcc96b628[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Wed Dec 6 22:21:48 2023 +0200
+
+    Modify on WorkFlow File
+
+[33mcommit 94c369f96cd235d13f6fca4a4e37d16ee106dc5b[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Wed Dec 6 20:48:41 2023 +0200
+
+    Fix Error On Deploy
+
+[33mcommit 3273b67e707d6dd1287860011890982753e33b6f[m
+Merge: cf5ba51 0690f3a
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Wed Dec 6 20:47:19 2023 +0200
+
+    Merge branch 'main' of https://github.com/mohamedmagdy20/horse-station into magdy-dev
+
+[33mcommit 0690f3af47750bca2fa9a1d54a44a02877fa21ff[m
+Author: Mohamed Magdy <86977873+mohamedmagdy20@users.noreply.github.com>
+Date:   Wed Dec 6 20:44:04 2023 +0200
+
+    Create main.yml and Deploy on Server
+
+[33mcommit 92bec3368ba8a9b5df3fb2813ab3e657d028b382[m
+Merge: 0e03281 1aec0b2
+Author: Mohamed Magdy <86977873+mohamedmagdy20@users.noreply.github.com>
+Date:   Wed Dec 6 20:19:40 2023 +0200
+
+    Merge pull request #2 from mohamedmagdy20/magdy-dev
+    
+    Setup Translation and Make Category and Country Crud
+
+[33mcommit cf5ba5182cdcb1e55f21fc747f41f1c406c819e5[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Wed Dec 6 20:11:51 2023 +0200
+
+    Get Category Api
+
+[33mcommit 1aec0b2a8c1e1c5fd7baad1bd8fcc2b3380b9d76[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Wed Dec 6 19:59:24 2023 +0200
+
+    Setup Translation and Make Category and Country Crud
+
+[33mcommit 0e0328172f46e44f7584ab82b5c649db88609bb8[m
+Merge: aa907cf 24465c8
+Author: Mohamed Magdy <86977873+mohamedmagdy20@users.noreply.github.com>
+Date:   Tue Dec 5 19:56:46 2023 +0200
+
+    Merge pull request #1 from mohamedmagdy20/dev-oraby
+    
+    Api Registration
+
+[33mcommit 24465c85016935ad710cbb93c2ca302385921704[m
+Author: Dev-oraby <ahmad.orabi@ratio-golden.com>
+Date:   Fri Dec 1 22:10:15 2023 +0200
+
+    Api Registration
+
+[33mcommit aa907cf8837a78df8f0511258f923d1b7073bdfd[m
+Author: unknown <mohamedmagdymohamed982@gmail.com>
+Date:   Fri Dec 1 16:56:04 2023 +0200
+
+    Inital Commit

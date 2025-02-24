@@ -1,0 +1,82 @@
+:root {
+    --rtcl-primary-color: #0b4577;
+    --rtcl-link-color: #0b4577;
+    --rtcl-link-hover-color: #eab300;
+    --rtcl-button-bg-color: #0b4577;
+    --rtcl-button-color: #ffffff;
+    --rtcl-button-hover-bg-color: #eab300;
+    --rtcl-button-hover-color: #ffffff;
+    --rtcl-badge-new-bg-color: #120a82;
+    --rtcl-badge-top-bg-color: #fcb900 !important;
+    --rtcl-badge-top-color: #ffffff !important;
+}
+
+.rtcl .rtcl-icon,
+.rtcl-chat-form button.rtcl-chat-send,
+.rtcl-chat-container a.rtcl-chat-card-link .rtcl-cc-content .rtcl-cc-listing-amount,
+.rtcl-chat-container ul.rtcl-messages-list .rtcl-message span.read-receipt-status .rtcl-icon.rtcl-read {
+    color: #0b4577;
+}
+
+#rtcl-chat-modal {
+    background-color: var(--rtcl-primary-color);
+    border-color: var(--rtcl-primary-color)
+}
+
+#rtcl-compare-btn-wrap a.rtcl-compare-btn,
+.rtcl-btn,
+#rtcl-compare-panel-btn,
+.rtcl-chat-container ul.rtcl-messages-list .rtcl-message-wrap.own-message .rtcl-message-text,
+.rtcl-sold-out {
+    background: var(--rtcl-primary-color);
+}
+
+.rtcl a {
+    color: var(--rtcl-link-color)
+}
+
+.rtcl a:hover {
+    color: var(--rtcl-link-hover-color)
+}
+
+.rtcl .btn {
+    background-color: var(--rtcl-button-bg-color);
+    border-color: var(--rtcl-button-bg-color);
+}
+
+.rtcl .btn {
+    color: var(--rtcl-button-color);
+}
+
+[class*=rtcl-slider] [class*=swiper-button-],
+.rtcl-carousel-slider [class*=swiper-button-] {
+    color: var(--rtcl-button-color);
+}
+
+.rtcl-pagination ul.page-numbers li span.page-numbers.current,
+.rtcl-pagination ul.page-numbers li a.page-numbers:hover {
+    background-color: var(--rtcl-button-hover-bg-color);
+}
+
+.rtcl .btn:hover {
+    background-color: var(--rtcl-button-hover-bg-color);
+    border-color: var(--rtcl-button-hover-bg-color);
+}
+
+.rtcl-pagination ul.page-numbers li a.page-numbers:hover,
+.rtcl-pagination ul.page-numbers li span.page-numbers.current {
+    color: var(--rtcl-button-hover-color);
+}
+
+.rtcl .btn:hover {
+    color: var(--rtcl-button-hover-color)
+}
+
+[class*=rtcl-slider] [class*=swiper-button-],
+.rtcl-carousel-slider [class*=swiper-button-]:hover {
+    color: var(--rtcl-button-hover-color);
+}
+
+.rtcl .rtcl-stores .rtcl-store-item:hover div.item-content {
+    background-color: #0b4577;
+}
