@@ -19,6 +19,7 @@ use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\website\LocalizationController;
 use App\Http\Controllers\Dashboard\Admin\AdminController;
 use App\Http\Controllers\Dashboard\AdvertismentController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\TapController;
 use App\Http\Controllers\website\Auth\ForgetPasswordController;
 use Illuminate\Support\Facades\Artisan;
@@ -67,6 +68,8 @@ Route::get('/run-commands', function () {
     Route::post('send-otp',[ForgetPasswordController::class,'sendOtp'])->name('send-otp');
     Route::post('forget-password/verify',[ForgetPasswordController::class,'verify'])->name('forget-password.verify');
     Route::post('change-password',[ForgetPasswordController::class,'changePassword'])->name('change-password');
+
+
    });
     Route::get('logout',[AuthController::class,'logout'])->name('logout');
     Route::get('/', [MainController::class,'main'])->name('home');
@@ -89,6 +92,10 @@ Route::get('/run-commands', function () {
         Route::delete('/cart/{id}',        [ControllersCartController::class, 'removeItem'])->name('removeItem');
         Route::post('/paymenttap',         [TapController::class, 'paymenttap'])->name('paymenttap');
         Route::get('/callbacktap',         [TapController::class, 'callbacktap'])->name('callbacktap');
+
+        Route::post('/pay', [PaymentController::class, 'initiatePayment'])->name('pay');
+        Route::get('/payment/success', [PaymentController::class, 'handleSuccess'])->name('payment.success');
+        Route::get('/payment/failed', [PaymentController::class, 'handleFailed'])->name('payment.failed');
 
         Route::get('favourite/create',[AdvertismentController::class,'addFav'])->name('ads.fav.create');
         Route::group(['prefix'=>'profile','controller'=>ProfileController::class],function(){

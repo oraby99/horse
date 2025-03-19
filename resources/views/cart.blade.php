@@ -44,17 +44,16 @@
   @if($totalPrice > 0)
   <div class="checkout-section">
     <h3>Total: $<span id="totalPrice">{{ $totalPrice }}</span></h3>
+    <form action="{{ route('pay') }}" method="POST">
+      @csrf
+      <input type="hidden" name="totalPrice" value="{{ $totalPrice }}">
+      <button type="submit" class="btn btn-success">Checkout</button>
+    </form>
   </div>
 @else
-  <p>No items in cart.</p>
+  <p>No items in cart...</p>
 @endif
-<form action="{{ route('paymenttap') }}" method="post">
-@csrf
-<div class="controls w-50">
-<button class="btn main-btn" type="submit">{{__('Pay Now by Tap')}}
-</button>
-</div>
-</form>
+
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
