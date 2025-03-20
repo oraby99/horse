@@ -46,7 +46,12 @@
     <h3>Total: $<span id="totalPrice">{{ $totalPrice }}</span></h3>
     <form action="{{ route('pay') }}" method="POST">
       @csrf
-      <input type="hidden" name="totalPrice" value="{{ $totalPrice }}">
+      <input type="" hidden name="price" value="{{$totalPrice}}">
+      @error('price')
+        <span style="color: red">{{$message}}</span>
+      @enderror
+      <input type="hidden" name="currency" value="KWD">
+
       <button type="submit" class="btn btn-success">Checkout</button>
     </form>
   </div>
