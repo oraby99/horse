@@ -42,8 +42,7 @@ class PaymentController extends Controller
     public function handleSuccess(Request $request)
     {
         $response = $this->hesabeService->verifyPayment($request->all());
-    
-        if ($response['status'] === 'success') {
+        if ($response['status'] == true) {
             // Here you can save the payment details to your database, e.g.,
             // Order::create([...]);
     

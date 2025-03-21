@@ -133,23 +133,28 @@ class HesabePaymentService
     public function verifyPayment($responseData)
     {
         try {
-            $encryptedResponse = $responseData['data'] ?? '';
-            $receivedToken = $responseData['token'] ?? '';
 
-            // Generate token from the received encrypted data
-            $generatedToken = hash_hmac('sha256', $encryptedResponse, $this->secretKey);
+            // decript response 
+            $Responsecode =  $this->hesabeCrypt::decrypt($responseData['data'],$this->secretKey,$this->ivKey);
+            // decode response 
+            $response = json_decode($Responsecode, true);
+            // $encryptedResponse = $responseData['data'] ?? '';
+            // $receivedToken = $responseData['token'] ?? '';
 
-            // Validate the token
-            if (!hash_equals($generatedToken, $receivedToken)) {
-                throw new \Exception('Invalid token.');
-            }
+            // // Generate token from the received encrypted data
+            // $generatedToken = hash_hmac('sha256', $encryptedResponse, $this->secretKey);
 
-            // Decrypt the response
-            $decryptedData = $this->decryptData($encryptedResponse);
-            $response = json_decode($decryptedData, true);
+            // // Validate the token
+            // if (!hash_equals($generatedToken, $receivedToken)) {
+            //     throw new \Exception('Invalid token.');
+            // }
+
+            // // Decrypt the response
+            // $decryptedData = $this->decryptData($encryptedResponse);
+            // $response = json_decode($responseData, true);
 
             // Check if payment was successful
-            if ($response['status'] == 'success') {
+            if ($response['status'] == true) {
                 return $response;
             }
 
