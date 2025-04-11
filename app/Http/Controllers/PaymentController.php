@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\HesabePaymentService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class PaymentController extends Controller
 {
@@ -31,8 +32,8 @@ class PaymentController extends Controller
         $orderId = uniqid(); // Generate a unique order ID
         $returnUrl = route('payment.success');
         try {
-            $paymentUrl = $this->hesabeService->createPayment($amount, $orderId, $returnUrl);
-          return $paymentUrl;
+            $token = $this->hesabeService->createPayment($amount, $orderId, $returnUrl);
+            return Redirect::to(config('hesabe.api_url').'payment?data='.$token);
             // return redirect($paymentUrl);
         } catch (\Exception $e) {
             return redirect()->route('payment.failed')->with('error', $e->getMessage());

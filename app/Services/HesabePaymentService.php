@@ -81,7 +81,7 @@ class HesabePaymentService
             $token = $this->getCheckoutResponse($response);
 
             
-            return Redirect::to($this->apiUrl.'payment?data='.$token);
+            return $token;
             // return $encryptedResponse;
             //Get encrypted data response            
             // $response = Http::withHeaders([
