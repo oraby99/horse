@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CartItem;
+use App\Models\Order;
+use App\Models\OrderItem;
 use App\Services\HesabePaymentService;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class PaymentController extends Controller
@@ -42,15 +47,39 @@ class PaymentController extends Controller
 
     public function handleSuccess(Request $request)
     {
-        $response = $this->hesabeService->verifyPayment($request->all());
-        if ($response['status'] == true) {
-            // Here you can save the payment details to your database, e.g.,
-            // Order::create([...]);
-    
-            return view('payment.success', ['data' => $response]);
+        try{
+
+            $response = $this->hesabeService->verifyPayment($request->all());
+            if ($response['status'] == true) {
+                DB::beginTransaction();
+                // Here you can save the payment details to your database, e.g.,
+                $order = new Order();
+                $order->user_id         = auth()->id();
+                $order->address_id      = $request->address_id;
+                $order->total           = $request->total;
+                $order->order_status =  'completed';
+                $order->payment_status =  'completed';
+                $order->save();
+                // add order detail and remove cart 
+
+                $carts = CartItem::where('user_id', auth()->id())->get();
+                foreach($carts as $cart)
+                {
+                    OrderItem::create([
+                        'order_id'=>$order->id,
+                        'product_id'=>$cart->product_id,
+                        'qantity'=>$cart->qantity,
+                        'total'=>$cart->total,
+                    ]);
+                    $cart->delete();
+                }
+                DB::commit();
+                return view('payment.success', ['data' => $response,'status'=>true]);
+            }
+        }catch(Exception  $e){
+            DB::rollBack();
+            return redirect()->route('payment.failed')->with('error', $response['message'] ?? 'Payment verification failed.');
         }
-    
-        return redirect()->route('payment.failed')->with('error', $response['message'] ?? 'Payment verification failed.');
     }
     
 
