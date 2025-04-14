@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\PaymentResource;
+use App\Http\Resources\PaymentResponceResource;
 use App\Models\Cart;
 use App\Models\CartItem;
 use App\Models\User;
@@ -25,17 +26,15 @@ class PaymentController extends Controller
     public function checkout(Request $request)
     {
         try{
-            $total = $this->getUserCartTotal(auth()->user()->id);
+            $data = [];
+            $total = ($this->getUserCartTotal(auth()->user()->id) + 5);
             $amount = number_format($total, 3, '.', '');
             $orderId = uniqid();
             $returnUrl = route('payment.success');
             $token = $this->hesabeService->createPayment($amount, $orderId,$returnUrl);
+            $data['token'] = $token;
             return response()->json([
-                'data'=> [
-                    'payment_url'=>config('hesabe.api_url').'payment?data='.$token,
-                    'callback_url'=>route('payment.success'),
-                    'fail_url'=>route('payment.failed')        
-                ],
+                'data'=> new PaymentResponceResource($data),
                 'status'=>200,
                 'message'=>'Success'
             ]);
