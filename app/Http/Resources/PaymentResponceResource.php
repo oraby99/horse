@@ -15,7 +15,7 @@ class PaymentResponceResource extends JsonResource
     public function toArray(Request $request): array
     {
         return[
-            'payment_url'=>config('hesabe.api_url').'payment?data='.$this->token,
+            'payment_url'=>config('hesabe.api_url').'payment?data='.$this['token'],
             'fail_url'=>route('payment.failed')        
         ];
     }

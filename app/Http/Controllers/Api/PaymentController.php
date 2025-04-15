@@ -41,7 +41,7 @@ class PaymentController extends Controller
      
             $returnUrl = route('payment.success').'?status='.true;
             $responce = $this->hesabeService->createPayment($amount, $orderId,$returnUrl );
-            $data['token'] = $responce['token'];
+            $data['token'] = $responce;
             return response()->json([
                 'data'=> new PaymentResponceResource($data),
                 'status'=>200,

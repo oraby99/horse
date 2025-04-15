@@ -187,10 +187,8 @@ class HesabePaymentService
         // return $decryptResponseData;
         // //Binding the decrypted response data to the entity model
         $code = $decryptResponseData['response']['data'];
-        $data = [
-            'token'=>$code,
-        ];
-        return $data;
+        
+        return $code;
         // $decryptedResponse = $this->modelBindingHelper->getCheckoutResponseData($decryptResponseData);
 
         // return [$response , $decryptedResponse];
