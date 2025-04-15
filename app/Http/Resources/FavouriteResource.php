@@ -18,8 +18,8 @@ class FavouriteResource extends JsonResource
             return [
                 'id' => $this->advertisment->id,
                 'item_id' => $this->id,
-                'name' => $this->advertisment->name,
-                'category' => $this->advertisment->category->name,
+                'name' => optional($this->advertisment)->name,
+                'category' => optional($this->advertisment->category)->name,
                 'price' => $this->price,
                 'type' => $this->type,
                 'is_sold' => $this->is_sold !== null ? $this->is_sold : 0,
@@ -29,8 +29,8 @@ class FavouriteResource extends JsonResource
             return [
                 'id' => $this->product->id,
                 'item_id' => $this->id,
-                'name' => $this->product->name,
-                'category' => $this->product->category->name,
+                'name' => optional($this->product)->name,
+                'category' => optional($this->product->category)->name,
                 'price' => $this->price,
                 'type' => $this->type,
                 'image' => $this->product->images != null ? asset('uploads/products/'.$this->product->images[0]) : asset('default.png'),

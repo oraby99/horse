@@ -20,6 +20,8 @@ class HesabePaymentResponseModel
     public $variable3;
     public $variable4;
     public $variable5;
+    public $address_id;
+
     public $method;
     public $administrativeCharge;
 

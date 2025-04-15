@@ -41,13 +41,12 @@ class HesabePaymentService
             'orderReferenceNumber' => $orderId,
             'responseUrl' => $returnUrl,
             'failureUrl' => route('payment.failed'),
-            'paymentType'=>0
+            'paymentType'=>0,
         ];
         
         try {
             // Encrypt data for security
             $encryptedData = $this->hesabeCrypt::encrypt(json_encode($data),$this->secretKey , $this->ivKey);
-            // $token = $this->generateToken($data);;
             
             \Log::info('Hesabe Payment Request:', [
                 'merchantCode' => $this->merchantId,
@@ -138,23 +137,8 @@ class HesabePaymentService
             $Responsecode =  $this->hesabeCrypt::decrypt($responseData['data'],$this->secretKey,$this->ivKey);
             // decode response 
             $response = json_decode($Responsecode, true);
-            // $encryptedResponse = $responseData['data'] ?? '';
-            // $receivedToken = $responseData['token'] ?? '';
-
-            // // Generate token from the received encrypted data
-            // $generatedToken = hash_hmac('sha256', $encryptedResponse, $this->secretKey);
-
-            // // Validate the token
-            // if (!hash_equals($generatedToken, $receivedToken)) {
-            //     throw new \Exception('Invalid token.');
-            // }
-
-            // // Decrypt the response
-            // $decryptedData = $this->decryptData($encryptedResponse);
-            // $response = json_decode($responseData, true);
-
             // Check if payment was successful
-            if ($response['status'] == true) {
+            if ($response['status'] == true) {  
                 return $response;
             }
 
@@ -203,7 +187,10 @@ class HesabePaymentService
         // return $decryptResponseData;
         // //Binding the decrypted response data to the entity model
         $code = $decryptResponseData['response']['data'];
-        return $code;
+        $data = [
+            'token'=>$code,
+        ];
+        return $data;
         // $decryptedResponse = $this->modelBindingHelper->getCheckoutResponseData($decryptResponseData);
 
         // return [$response , $decryptedResponse];

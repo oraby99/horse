@@ -7,6 +7,7 @@ use App\Http\Resources\PaymentResource;
 use App\Http\Resources\PaymentResponceResource;
 use App\Models\Cart;
 use App\Models\CartItem;
+use App\Models\Order;
 use App\Models\User;
 use App\Services\HesabePaymentService;
 use Exception;
@@ -27,12 +28,20 @@ class PaymentController extends Controller
     {
         try{
             $data = [];
-            $total = ($this->getUserCartTotal(auth()->user()->id) + 5);
+            $total =  $this->getUserCartTotal(auth()->user()->id) + 5 ;
             $amount = number_format($total, 3, '.', '');
             $orderId = uniqid();
-            $returnUrl = route('payment.success');
-            $token = $this->hesabeService->createPayment($amount, $orderId,$returnUrl);
-            $data['token'] = $token;
+               // create pending order
+            $order = new Order();
+            $order->user_id =auth()->user()->id;
+            $order->address_id = 1;
+            $order->total = $amount;
+            $order->order_number = $orderId;
+            $order->save();
+     
+            $returnUrl = route('payment.success').'?status='.true;
+            $responce = $this->hesabeService->createPayment($amount, $orderId,$returnUrl );
+            $data['token'] = $responce['token'];
             return response()->json([
                 'data'=> new PaymentResponceResource($data),
                 'status'=>200,
