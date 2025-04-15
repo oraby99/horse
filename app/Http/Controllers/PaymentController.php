@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\CartItem;
 use App\Models\Order;
 use App\Models\OrderItem;
@@ -63,7 +64,9 @@ class PaymentController extends Controller
                 $order->order_status =  'completed';
                 $order->payment_status =  'completed';
                 $order->save();
+
                 $carts = CartItem::where('user_id', $order->user_id)->get();
+                Cart::where('user_id',$order->user_id)->delete();
                 foreach($carts as $cart)
                 {
                     OrderItem::create([
