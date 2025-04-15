@@ -50,6 +50,9 @@ Route::get('/run-commands', function () {
     }
     return response()->json($output);
 });
+Route::get('/payment/success', [PaymentController::class, 'handleSuccess'])->name('payment.success');
+Route::get('/payment/failed', [PaymentController::class, 'handleFailed'])->name('payment.failed');
+
 ///////////////////////////////WEBSITE////////////////////////////////////
     Route::group(['middleware'=>'guest'],function(){
     Route::get('login',[AuthController::class,'loginView'])->name('login.view');
@@ -94,9 +97,7 @@ Route::get('/run-commands', function () {
         Route::get('/callbacktap',         [TapController::class, 'callbacktap'])->name('callbacktap');
 
         Route::post('/pay', [PaymentController::class, 'initiatePayment'])->name('pay');
-        Route::get('/payment/success', [PaymentController::class, 'handleSuccess'])->name('payment.success');
-        Route::get('/payment/failed', [PaymentController::class, 'handleFailed'])->name('payment.failed');
-
+        
         Route::get('favourite/create',[AdvertismentController::class,'addFav'])->name('ads.fav.create');
         Route::group(['prefix'=>'profile','controller'=>ProfileController::class],function(){
             Route::get('main','index')->name('profile.main');

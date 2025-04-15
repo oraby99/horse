@@ -43,6 +43,7 @@ class ModelBindingHelper
         $this->hesabeCheckoutRequestModel->variable3 = $request['variable3'];
         $this->hesabeCheckoutRequestModel->variable4 = $request['variable4'];
         $this->hesabeCheckoutRequestModel->variable5 = $request['variable5'];
+        $this->hesabeCheckoutRequestModel->address_id = $request['address_id'];
         $this->hesabeCheckoutRequestModel->merchantCode = $request['merchantCode'];
         $this->hesabeCheckoutRequestModel->responseUrl = $request['responseUrl'];
         $this->hesabeCheckoutRequestModel->failureUrl = $request['failureUrl'];
@@ -91,6 +92,7 @@ class ModelBindingHelper
         $this->hesabePaymentResponseModel->variable3 = $data['response']['variable3'];
         $this->hesabePaymentResponseModel->variable4 = $data['response']['variable4'];
         $this->hesabePaymentResponseModel->variable5 = $data['response']['variable5'];
+        $this->hesabePaymentResponseModel->address_id = $data['response']['address_id'];
         $this->hesabePaymentResponseModel->method = $data['response']['method'];
         $this->hesabePaymentResponseModel->administrativeCharge = $data['response']['administrativeCharge'];
 

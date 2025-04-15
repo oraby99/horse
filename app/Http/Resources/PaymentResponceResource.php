@@ -16,7 +16,6 @@ class PaymentResponceResource extends JsonResource
     {
         return[
             'payment_url'=>config('hesabe.api_url').'payment?data='.$this->token,
-            'callback_url'=>route('payment.success').'?status='.true,
             'fail_url'=>route('payment.failed')        
         ];
     }

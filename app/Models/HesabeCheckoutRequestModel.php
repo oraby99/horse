@@ -20,6 +20,7 @@ class HesabeCheckoutRequestModel
     public $variable3;
     public $variable4;
     public $variable5;
+    public $address_id;
     public $merchantCode;
     public $responseUrl;
     public $failureUrl;
