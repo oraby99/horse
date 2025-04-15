@@ -66,7 +66,7 @@ class PaymentController extends Controller
                 $order->save();
 
                 $carts = CartItem::where('user_id', $order->user_id)->get();
-                Cart::where('user_id',$order->user_id)->delete();
+                // Cart::where('user_id',$order->user_id)->delete();
                 foreach($carts as $cart)
                 {
                     OrderItem::create([
