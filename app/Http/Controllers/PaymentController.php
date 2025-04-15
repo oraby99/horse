@@ -44,7 +44,7 @@ class PaymentController extends Controller
         $returnUrl = route('payment.success');
         try {
             $responce = $this->hesabeService->createPayment($amount, $orderId, $returnUrl);
-            return Redirect::to(config('hesabe.api_url').'payment?data='.$responce['token']);
+            return Redirect::to(config('hesabe.api_url').'payment?data='.$responce);
             // return redirect($paymentUrl);
         } catch (\Exception $e) {
             return redirect()->route('payment.failed')->with('error', $e->getMessage());
