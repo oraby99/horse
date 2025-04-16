@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Advertisment;
 use App\Models\Cart;
 use App\Models\CartItem;
 use App\Models\Order;
@@ -28,7 +29,7 @@ class PaymentController extends Controller
         // converti price to payment format
         $sum = $request->price + 5 ; 
         $amount = number_format($sum, 3, '.', '');
-        $orderId = uniqid(); // Generate a unique order ID
+        $orderId = 'order-' . uniqid() . time(); // Generate a unique order ID
         // create pending order
         $order = new Order();
         $order->user_id =auth()->user()->id;
@@ -57,39 +58,59 @@ class PaymentController extends Controller
         try{
             $response = $this->hesabeService->verifyPayment($request->all());
             if ($response['status'] == true) {
+
                 DB::beginTransaction();
                 // Here you can save the payment details to your database, e.g.,
-                $order = Order::where('order_number',$response['response']['orderReferenceNumber'])->first(); 
-                $order->shipment_status = $response['response']['method'];
-                $order->order_status =  'completed';
-                $order->payment_status =  'completed';
-                $order->save();
-
-                $carts = CartItem::where('user_id', $order->user_id)->get();
-                // Cart::where('user_id',$order->user_id)->delete();
-                foreach($carts as $cart)
+                $orderNumber = $response['response']['orderReferenceNumber'];
+                if( str_starts_with($orderNumber, 'order-'))
                 {
-                    OrderItem::create([
-                        'order_id'=>$order->id,
-                        'product_id'=>$cart->product_id,
-                        'qantity'=>$cart->qantity,
-                        'total'=>$cart->total,
-                    ]);
-                    $cart->delete();
+                    $order = Order::where('order_number',$orderNumber)->first(); 
+                    $order->shipment_status = $response['response']['method'];
+                    $order->order_status =  'completed';
+                    $order->payment_status =  'completed';
+                    $order->save();
+    
+                    $carts = CartItem::where('user_id', $order->user_id)->get();
+                    // Cart::where('user_id',$order->user_id)->delete();
+                    foreach($carts as $cart)
+                    {
+                        OrderItem::create([
+                            'order_id'=>$order->id,
+                            'product_id'=>$cart->product_id,
+                            'qantity'=>$cart->qantity,
+                            'total'=>$cart->total,
+                        ]);
+                        $cart->delete();
+                    }
+    
+                
+                }else if(str_starts_with($orderNumber, 'advertisment-')){
+                    // this is advertisment order 
+                    $ads =  Advertisment::where('order_number',$response['response']['orderReferenceNumber'])->first();
+                    if($ads->exists())
+                    {
+                        $ads->update([
+                            $ads->payment_method => $response['response']['method'],
+                            $ads->payment_status =  'success'
+                        ]);
+                    }
                 }
                 DB::commit();
                 return view('payment.success', ['data' => $response,'status'=>true]);
             }
         }catch(Exception  $e){
             DB::rollBack();
-            return $e;
-            // return redirect()->route('payment.failed')->with('error', $response['message'] ?? 'Payment verification failed.');
+            return redirect()->route('payment.failed')->with('error', $response['message'] ?? 'Payment verification failed.');
         }
     }
     
 
-    public function handleFailed()
+    public function handleFailed(Request $request)
     {
+        if(isset($request->order_number))
+        {
+            Order::where('order_number',$request->order_number)->delete();
+        }
         return view('payment.failed');
     }
 }

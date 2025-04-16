@@ -29,6 +29,9 @@ class Advertisment extends Model
             'is_sold',
             'is_active',
             'is_expire',
+            'payment_method',
+            'payment_status',
+            'order_number',
 
         ];
         protected $casts = [
