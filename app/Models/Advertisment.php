@@ -32,7 +32,7 @@ class Advertisment extends Model
             'payment_method',
             'payment_status',
             'order_number',
-
+            'amount'
         ];
         protected $casts = [
              'images'=>'array',

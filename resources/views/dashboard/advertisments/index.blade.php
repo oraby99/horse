@@ -69,7 +69,7 @@
                             <td>{{$item->phone}}</td>
                             <td>{{$item->payment_status}}</td>
                             <td>{{$item->amount}}</td>
-                            <td>{{$item->payment_method == 1 ? 'k-net' ? 'Visa'}}</td>
+                            <td>{{$item->payment_method == 1 ? 'k-net' : 'Visa'}}</td>
                             <td>
                                 <input type="checkbox" id="switch-{{$item->id}}" switch="none" onchange="toggleData({{$item->id}})" {{$item->is_active == true ? 'checked' : ''}}  />
                                 <label for="switch-{{$item->id}}" data-on-label="On" data-off-label="Off"></label>

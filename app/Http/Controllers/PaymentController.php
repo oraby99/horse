@@ -90,8 +90,8 @@ class PaymentController extends Controller
                     if($ads->exists())
                     {
                         $ads->update([
-                            $ads->payment_method => $response['response']['method'],
-                            $ads->payment_status =  'success'
+                            'payment_method' => $response['response']['method'],
+                            'payment_status' =>  'success',
                         ]);
                     }
                 }
