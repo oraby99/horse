@@ -76,41 +76,9 @@ class HesabePaymentService
             ));
             $response = curl_exec($curl);
             curl_close($curl);
-    
-            $token = $this->getCheckoutResponse($response);
-
-            
+            $token = $this->getCheckoutResponse($response);   
             return $token;
-            // return $encryptedResponse;
-            //Get encrypted data response            
-            // $response = Http::withHeaders([
-            //     'Authorization' => 'Bearer ' . $this->apiKey,
-            //     'Content-Type' => 'application/json',
-            // ])->post($fullUrl, [
-            //     'data' => $encryptedData,
-            //     'token' => $token
-            // ]);
-
-            
-            // \Log::info('Hesabe Response:', [
-            //     'status' => $response->status(),
-            //     'body' => $response->json()
-            // ]);
-            
-            // if ($response->successful()) {
-            //     $responseData = $response->json();
-            //     if (isset($responseData['response']['data'])) {
-            //         return $responseData['response']['data'];
-            //     } elseif (isset($responseData['response']['paymentUrl'])) {
-            //         return $responseData['response']['paymentUrl'];
-            //     }
-            // }
-            
-            // \Log::error('Hesabe Payment Error: ', [
-            //     'response' => $response->json(),
-            //     'status' => $response->status()
-            // ]);
-            throw new \Exception('Failed to get payment URL: ' . ($response->json()['message'] ?? 'Unknown error'));
+         
         } catch (\Exception $e) {
             \Log::error('Exception in Hesabe payment: ' . $e->getMessage());
             throw $e;

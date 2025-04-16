@@ -7,9 +7,13 @@ use App\Http\Requests\Api\AdvertismentRequest;
 use App\Http\Resources\AdsFavResourse;
 use App\Http\Resources\AdvertismentDetailsResource;
 use App\Http\Resources\AdvertismentResource;
+use App\Http\Resources\PaymentResource;
 use App\Http\Traits\FilesTrait;
 use App\Models\AdsFavourite;
 use App\Models\Advertisment;
+use App\Models\Order;
+use App\Models\Plan;
+use App\Services\HesabePaymentService;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -125,9 +129,12 @@ class AdvertismentController extends Controller
                 $data['plan_id'] = 2;
             }
             $data['user_id'] = auth()->user()->id;
-            $ads = $this->model->create($data);
+            // before create call payment gatway ; 
+            $payment = $this->handlePayment($data);
+            $ads = $this->model->create(array_merge($data , $payment));
             return response()->json([
-                'data'=> new AdvertismentDetailsResource($ads),
+                // 'data'=> new AdvertismentDetailsResource($ads),
+                "data" =>new PaymentResource((object)$payment),
                 'status'=>200,
                 'message'=>'Success'
             ]);
@@ -243,6 +250,24 @@ class AdvertismentController extends Controller
                 'message' => $e->getMessage()
             ], 400);
         }
+    }
+
+    private function handlePayment($data)
+    {
+        // get price of advertisment plan 
+        $price = Plan::findOrFail($data['plan_id']);
+        $amount =  number_format($price->price, 3, '.', '');
+        // Genereate Order Number 
+        $orderNumber = 'advertisment-' . uniqid() . time(); // Generate a unique Advertisemtn order ID
+        // create advertisment with pending status
+        $data['amount'] = $amount;
+        $data['order_number'] = $orderNumber;
+        $returnUrl = route('payment.success').'?status='.true;
+        // call payment service and return redirect url 
+        $paymentService = new HesabePaymentService();
+        $paymentUrl = $paymentService->createPayment($amount , $orderNumber ,$returnUrl);
+        $data['token'] = $paymentUrl;
+        return $data;
     }
         // public function update(AdvertismentRequest $request, $advertisement)
         // {

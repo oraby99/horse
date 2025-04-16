@@ -30,11 +30,11 @@ class PaymentController extends Controller
             $data = [];
             $total =  $this->getUserCartTotal(auth()->user()->id) + 5 ;
             $amount = number_format($total, 3, '.', '');
-            $orderId = uniqid();
+            $orderId = 'order-' . uniqid() . time(); // Generate a unique order ID
                // create pending order
             $order = new Order();
             $order->user_id =auth()->user()->id;
-            $order->address_id = 1;
+            $order->address_id = $request->address_id;
             $order->total = $amount;
             $order->order_number = $orderId;
             $order->save();

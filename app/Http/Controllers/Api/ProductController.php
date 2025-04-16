@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\FavouriteRequest;
 use App\Http\Resources\Api\SearchResource;
 use App\Http\Resources\FavouriteResource;
 use App\Http\Resources\ProductDetailsResource;
@@ -105,18 +106,20 @@ class ProductController extends Controller
             'message' => 'Success',
         ]);
     }
-    public function addFav(Request $request)
+    public function addFav(FavouriteRequest $request)
     {
-        if($request->type == 'product')
+        $data = $request->validated();
+
+        if($data['type'] == 'product')
         {
             $dd =  $this->favModel->firstOrCreate([
-                'product_id'=>$request->product_id,
+                'product_id'=>$data['item_id'],
                 'user_id'=>auth()->user()->id
             ]);
-        }else if($request->type == 'advertisment')
+        }else if($data['type'] == 'advertisment')
         {
           $dd = $this->fav->firstOrCreate([
-                'advertisment_id'=>$request->advertisment_id,
+                'advertisment_id'=>$data['item_id'],
                 'user_id'=>auth()->user()->id
             ]);
         }
