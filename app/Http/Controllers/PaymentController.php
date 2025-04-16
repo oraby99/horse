@@ -92,6 +92,7 @@ class PaymentController extends Controller
                         $ads->update([
                             'payment_method' => $response['response']['method'],
                             'payment_status' =>  'success',
+                            'is_active'=>true
                         ]);
                     }
                 }
