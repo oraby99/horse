@@ -175,7 +175,7 @@ class AdvertismentController extends Controller
     public function update(AdvertismentRequest $request, $advertisement)
     {
         try {
-            $ads = $this->model->findOrFail($advertisement);
+            $ads = $this->model->findOrFail($advertisement);            
             if ($ads) {
                 $data = $request->validated();
                 $deletedImages = $request->input('delete_images', []) ?? [];
@@ -190,7 +190,6 @@ class AdvertismentController extends Controller
                         'type' => $data['type'],
                         'category_id' => $data['category_id'],
                         'plan_id' => $data['plan_id'],
-
                         'age' => $data['age'],
                         'description' => $data['description'],
                         'phone' => $data['phone'],
@@ -235,6 +234,15 @@ class AdvertismentController extends Controller
                         $dataVideo[] = $this->saveFile($video, config('filepath.VIDEOS_PATH'));
                     }
                     $ads->update(['videos' => $dataVideo]);
+                }
+                if(isset($request->is_republish) && $request->is_republish == 1)
+                {
+                    $payment = $this->handlePayment($data);
+                    return response()->json([
+                        'data' => new PaymentResource((object)$payment),
+                        'status' => 200,
+                        'message' => 'Success'
+                    ]);    
                 }
                 return response()->json([
                     'data' => new AdvertismentDetailsResource($ads),

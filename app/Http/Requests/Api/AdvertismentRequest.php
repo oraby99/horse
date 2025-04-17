@@ -36,6 +36,7 @@ class AdvertismentRequest extends FormRequest
             'images'=>'nullable',
             'videos'=>'nullable',
             'ads_type'=>'required',
+            'is_republish'=>'nullable|boolean'
         ];
     }
 
