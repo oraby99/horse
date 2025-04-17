@@ -39,8 +39,8 @@ class AdvertismentDetailsResource extends JsonResource
             }
         }
         $videos = $this->videos;
-        $dataVideos = [];
-        if ($videos !== null) {
+        if ($videos != null) {
+            $dataVideos = [];
             if (is_array($videos) || is_object($videos)) {
                 foreach ($videos as $item) {
                     $dataVideos[] = asset('uploads/videos/' . $item);
@@ -52,7 +52,7 @@ class AdvertismentDetailsResource extends JsonResource
             'name' => $this->name,
             'category' => optional($this->category)->name,
             'images' => $dataImages,
-            'videos' => $dataVideos,
+            'videos' => $videos != null ? $dataVideos : null,
             'price' => $this->price,
             'age' => $this->age,
             'location' => $this->country->name,
