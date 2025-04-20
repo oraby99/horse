@@ -180,6 +180,13 @@ class AdvertismentController extends Controller
                 $data = $request->validated();
                 $deletedImages = $request->input('delete_images', []) ?? [];
                 $existingImages = $ads->images;
+                if($data['ads_type'] == 'normal')
+                {
+                    $data['plan_id'] = 1;
+                }else{
+                    $data['plan_id'] = 2;
+                }
+               
                 if ($existingImages != null) {
                     $imagesToDelete = array_intersect($deletedImages, $existingImages);
                     $imagesToKeep = array_diff($existingImages, $imagesToDelete);
@@ -263,6 +270,13 @@ class AdvertismentController extends Controller
     private function handlePayment($data)
     {
         // get price of advertisment plan 
+        if($data['ads_type'] == 'normal')
+        {
+            $data['plan_id'] = 1;
+        }else{
+            $data['plan_id'] = 2;
+        }
+       
         $price = Plan::findOrFail($data['plan_id']);
         $amount =  number_format($price->price, 3, '.', '');
         // Genereate Order Number 
