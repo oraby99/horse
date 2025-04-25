@@ -6,6 +6,7 @@ use App\Models\Advertisment;
 use App\Models\Cart;
 use App\Models\CartItem;
 use App\Models\Order;
+use App\Models\RegisterCamp;
 use App\Models\OrderItem;
 use App\Services\HesabePaymentService;
 use Exception;
@@ -90,6 +91,17 @@ class PaymentController extends Controller
                     if($ads->exists())
                     {
                         $ads->update([
+                            'payment_method' => $response['response']['method'],
+                            'payment_status' =>  'success',
+                            'is_active'=>false
+                        ]);
+                    }
+                }else if(str_starts_with($orderNumber, 'camp-'))
+                {
+                   $camps =  RegisterCamp::where('order_number',$response['response']['orderReferenceNumber'])->first();
+                    if($camps->exists())
+                    {
+                        $camps->update([
                             'payment_method' => $response['response']['method'],
                             'payment_status' =>  'success',
                             'is_active'=>false

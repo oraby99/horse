@@ -20,7 +20,10 @@ class RegisterCamp extends Model
         'have_horse',
         'user_id',
         'total',
-        'rider_level'
+        'rider_level',
+         'payment_method',
+        'payment_status',
+        'order_number',
     ];
 
     public function camp()

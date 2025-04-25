@@ -204,6 +204,8 @@ class AdvertismentController extends Controller
                         'is_active' => 0,
                         'images' => $imagesToKeep,
                     ]);
+                }else{
+                    $imagesToKeep = [];
                 }
 
                 $deletedvideos = $request->input('delete_videos', []) ?? [];
@@ -226,6 +228,8 @@ class AdvertismentController extends Controller
                         'images' => $imagesToKeep,
                         'videos' => $videosToKeep,
                     ]);
+                }else{
+                    $videosToKeep = [];
                 }
 
                 if ($request->hasFile('images')) {

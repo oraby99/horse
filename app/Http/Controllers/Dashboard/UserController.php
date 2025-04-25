@@ -8,6 +8,7 @@ use App\Http\Traits\FilesTrait;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -31,7 +32,28 @@ class UserController extends Controller
         $data = $this->model->withTrashed()->findOrFail($id);
         return view('dashboard.users.show',['data'=>$data]);
     }
-
+    public function create()
+    {
+        return view('dashboard.users.create');
+    }
+    public function store(UserRequest $request)
+    {
+        $data  =$request->validated();
+        try{
+           
+            if($request->hasFile('image'))
+            {
+                $data['image'] = $this->updateFile($request->file('image'),$user->image,config('filepath.USER_PATH'));
+            }
+            $data['is_verified'] = 1;
+            $data['password'] = Hash::make($data['password']);
+           $this->model->create($data);
+            return redirect()->route('admin.user.index')->with('success','Added');
+        }catch(Exception $e)
+        {
+            return redirect()->back()->with('error','Error Accure');
+        }
+    }
     public function edit($id)
     {
         $data  =$this->model->withTrashed()->findOrFail($id);

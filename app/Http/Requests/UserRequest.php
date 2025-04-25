@@ -23,10 +23,11 @@ class UserRequest extends FormRequest
     {
         return [
             'name'=>'required',
-            'email'=>'required|email',
-            'phone'=>'required',
+            'email'=>'required|email|unique:users,email',
+            'phone'=>'required|unique:users,phone',
             'link'=>'nullable',
             'image'=>'nullable',
+            'password'=>'required|confirmed'
         ];
     }
 }

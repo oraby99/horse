@@ -8,10 +8,12 @@ use App\Http\Resources\CampDetailsResource;
 use App\Http\Resources\CampLevelResource;
 use App\Http\Resources\CampSportResource;
 use App\Models\Camp;
+use App\Services\HesabePaymentService;
 use App\Models\CampLevel;
 use App\Models\CampSport;
 use App\Models\RegisterCamp;
 use Exception;
+use App\Http\Resources\PaymentResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
@@ -53,11 +55,12 @@ class CampController extends Controller
         $data = $request->validated();
         try{
             $data['user_id'] = auth()->user()->id;
-            RegisterCamp::create($data);
+            $payment = $this->handlePayment($data);
+            RegisterCamp::create(array_merge($data , $payment));
             return response()->json([
-                'data'=> NULL,
+                'data'=> new PaymentResource((object)$payment),
                 'status'=>200,
-                'message'=>'Submited'
+                'message'=>'success'
             ]);
         }catch(Exception $e)
         {
@@ -90,5 +93,23 @@ class CampController extends Controller
             'message'=>'Done'
         ]);
     }
+    
+     private function handlePayment($data)
+     {
+        
+         
+         $amount =  number_format($data['total'], 3, '.', '');
+         // Genereate Order Number 
+         $orderNumber = 'camp-' . uniqid() . time(); // Generate a unique  Advertisemtn order ID
+         // create advertisment with pending status
+         $data['amount'] = $amount;
+         $data['order_number'] = $orderNumber;
+         $returnUrl = route('payment.success').'?status='.true;
+         // call payment service and return redirect url 
+         $paymentService = new HesabePaymentService();
+         $paymentUrl = $paymentService->createPayment($amount , $orderNumber  ,$returnUrl);
+         $data['token'] = $paymentUrl;
+         return $data;
+     }
 
 }
