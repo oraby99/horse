@@ -24,7 +24,10 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Users List</h4>
-
+<div class="text-center mb-3">
+                    <a href="{{ route('admin.user.create') }}" class="btn btn-primary">Add User <i
+                            class="fa fa-plus"></i></a>
+                </div>
                 <table id="datatable-buttons" class="table dt-responsive nowrap w-100">
                     <thead>
                         <tr>

@@ -172,6 +172,9 @@ Route::get('/payment/failed', [PaymentController::class, 'handleFailed'])->name(
     });
     Route::group(['prefix'=>'users','controller'=>UserController::class],function(){
         Route::get('/','index')->name('admin.user.index');
+        Route::get('create','create')->name('admin.user.create');
+        Route::post('store','store')->name('admin.user.store');
+        
         Route::get('edit/{id}','edit')->name('admin.user.edit');
         Route::post('update/{id}','update')->name('admin.user.update');
         Route::get('toggle-data','toggleData')->name('admin.user.toggle');
