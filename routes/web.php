@@ -19,6 +19,7 @@ use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\website\LocalizationController;
 use App\Http\Controllers\Dashboard\Admin\AdminController;
 use App\Http\Controllers\Dashboard\AdvertismentController;
+use App\Http\Controllers\Dashboard\AreaController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\TapController;
 use App\Http\Controllers\website\Auth\ForgetPasswordController;
@@ -210,5 +211,6 @@ Route::get('/payment/failed', [PaymentController::class, 'handleFailed'])->name(
         Route::get('/','index')->name('admin.order.index');
         Route::get('show/{id}','show')->name('admin.order.show');
     });
+    Route::resource('areas',AreaController::class);
 });
 

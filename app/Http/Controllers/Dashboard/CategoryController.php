@@ -27,7 +27,7 @@ class CategoryController extends Controller
  
      public function index()
      {
-         $data = $this->model->all();
+         $data = $this->model->latest()->get();
          return view('dashboard.categories.index',['data'=>$data]);
      }
 

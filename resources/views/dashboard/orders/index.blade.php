@@ -83,7 +83,7 @@
                             
                             <td>{{$item->total}}</td>
                             <td>
-                                <a href="{{route('admin.advertisment.show',$item->id)}}" class="btn btn-info"><i class="fa fa-eye"></i></a>
+                                <a href="{{route('admin.order.show',$item->id)}}" class="btn btn-info"><i class="fa fa-eye"></i></a>
                             </td>
                         </tr>
                     @endforeach

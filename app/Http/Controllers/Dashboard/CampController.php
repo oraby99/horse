@@ -25,7 +25,7 @@ class CampController extends Controller
    
     public function index()
     {
-        $data = $this->model->all();
+        $data = $this->model->latest()->get();
         return view('dashboard.camps.index',['data'=>$data]);
     }
 
