@@ -31,7 +31,7 @@ class AdvertismentController extends Controller
 
     public function index()
     {
-        $data = $this->model->withTrashed()->get();
+        $data = $this->model->withTrashed()->latest()->get();
         return view('dashboard.advertisments.index',['data'=>$data]);
     }
     public function create()

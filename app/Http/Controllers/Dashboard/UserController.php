@@ -23,7 +23,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $data = $this->model->get();
+        $data = $this->model->latest()->get();
         return view('dashboard.users.index',['data'=>$data]);
     }
 

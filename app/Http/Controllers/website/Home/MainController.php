@@ -23,7 +23,7 @@ class MainController extends Controller
     {
         $categroy = category::all();
         $ads      = Advertisment::all();
-        $products = Product::all();
+        $products = Product::paginate(8);
         return view('welcome',compact( 'categroy','ads','products'));
     }
     public function contact()

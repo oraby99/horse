@@ -103,6 +103,13 @@
                         <span>Banners</span>
                     </a>
                 </li>
+
+                <li>
+                    <a href="{{route('areas.index')}}" class="waves-effect">
+                        <i class="ri-money-dollar-box-line"></i>
+                        <span>Areas</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->

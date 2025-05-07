@@ -16,13 +16,13 @@ class OrderController extends Controller
 
     public function index()
     {
-        $data = $this->model->get();
+        $data = $this->model->latest()->get();
         return view('dashboard.orders.index',['data'=>$data]);
     }
 
     public function show($id)
     {
-        $data = $this->model->withTrashed()->find($id);
+        $data = $this->model->find($id);
         return view('dashboard.orders.show',['data'=>$data]);
     }
 
