@@ -12,9 +12,9 @@ class HomeController extends Controller
     public function index()
     {
         $categroy = Category::all();
-        $products = Product::with('images')->paginate(8); // Change 8 to your desired items per page
-        $ads = Advertisment::with(['category', 'country'])->get();
-        
+        $products = Product::with('images')->paginate(8); // Paginate products
+        $ads = Advertisment::with(['category', 'country', 'images'])->paginate(8); // Paginate ads
+
         return view('welcome', compact('categroy', 'products', 'ads'));
     }
 }

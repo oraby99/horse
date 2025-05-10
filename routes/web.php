@@ -24,6 +24,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\TapController;
 use App\Http\Controllers\website\Auth\ForgetPasswordController;
 use Illuminate\Support\Facades\Artisan;
+// use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -83,11 +84,11 @@ Route::get('/payment/failed', [PaymentController::class, 'handleFailed'])->name(
     Route::get('about',[MainController::class,'about'])->name('about');
     Route::get('terms',[MainController::class,'terms'])->name('terms');
     Route::get('/advertisment/{id}', [MainController::class , 'show'])->name('advertisment.show');
+    Route::get('/product/{id}', [MainController::class , 'show'])->name('product.show');
 
     Route::group(['middleware'=>'auth'],function(){
         Route::get('create', [MainController::class, 'create'])->name('addads');
         Route::post('create-advertisment', [MainController::class, 'storeadd'])->name('storeadd');
-        Route::get('/product/{id}', [MainController::class , 'show'])->name('product.show');
         Route::get('get-category',[AdvertismentController::class,'getCategory'])->name('get-categories');
         Route::post('advertisment/store',[AdvertismentController::class,'store'])->name('ads.store');
 
@@ -98,6 +99,8 @@ Route::get('/payment/failed', [PaymentController::class, 'handleFailed'])->name(
         Route::get('/callbacktap',         [TapController::class, 'callbacktap'])->name('callbacktap');
 
         Route::post('/pay', [PaymentController::class, 'initiatePayment'])->name('pay');
+        
+        Route::post('/cart/update-quantity/{id}', [CartController::class, 'updateQuantity'])->name('cart.updateQuantity');
         
         Route::get('favourite/create',[AdvertismentController::class,'addFav'])->name('ads.fav.create');
         Route::group(['prefix'=>'profile','controller'=>ProfileController::class],function(){

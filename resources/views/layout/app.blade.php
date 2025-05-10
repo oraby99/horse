@@ -22,7 +22,7 @@
 </head>
 <body class="@yield('body_class')">
     <div id="page" class="hfeed site">
-        @include('layout.nav')
+        @include('layout.nav') <!-- Ensure the navigation bar is included here -->
         @yield('content')
         @include('layout.footer')
     </div>
