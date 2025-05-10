@@ -4,37 +4,40 @@
 <style>
     .hero-section {
         position: relative;
-        height: 600px;
+        height: 400px; /* Reduced height */
         overflow: hidden;
     }
-    .carousel-inner {
-        height: 600px;
-    }
-    .carousel-inner .carousel-item img {
-        object-fit: cover;
-        height: 100%;
+    .swiper {
         width: 100%;
+        height: 100%;
+    }
+    .swiper-slide img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        max-height: 400px; /* Ensure images fit within the reduced height */
     }
     .search-container {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 80%;
+        width: 90%; /* Adjusted width for better responsiveness */
         max-width: 1200px;
         background: rgba(255, 255, 255, 0.95);
-        padding: 2rem;
+        padding: 1.5rem; /* Reduced padding */
         border-radius: 10px;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        z-index: 10; /* Ensure it appears above the Swiper */
     }
     .search-container .form-control {
-        height: 50px;
+        height: 45px; /* Adjusted height */
         border-radius: 25px;
         border: 1px solid #ddd;
         padding: 0 20px;
     }
     .search-btn {
-        height: 50px;
+        height: 45px; /* Adjusted height */
         border-radius: 25px;
         background-color: #c1a872;
         border: none;
@@ -100,47 +103,54 @@
     }
 </style>
 
-<!-- Hero Section with Carousel -->
+<!-- Hero Section with Swiper -->
 <div class="hero-section">
-    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="assets/images/pedramezzati_a_commercial_poster_for_website_horse_training__bl_cdf22caf-b057-4e99-ac58-5e0873f96a43-1 (1).png" alt="First slide">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="{{ asset('assets/images/pedramezzati_a_commercial_poster_for_website_horse_training__bl_cdf22caf-b057-4e99-ac58-5e0873f96a43-1 (1).png') }}" alt="First slide" class="img-fluid">
             </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="assets/images/pedramezzati_a_commercial_poster_for_website_horse_training_col_dfd363ab-5eda-4820-b553-890f51ec89e2-1 (1).png" alt="Second slide">
+            <div class="swiper-slide">
+                <img src="{{ asset('assets/images/pedramezzati_a_commercial_poster_for_website_horse_training__bl_cdf22caf-b057-4e99-ac58-5e0873f96a43-1.png') }}" alt="Second slide" class="img-fluid">
             </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="assets/images/pedramezzati_a_commercial_poster_for_website_horse_training__bl_dd359dc4-ea5e-4e4e-95ef-d9e5842996f4.png" alt="Third slide">
+            <div class="swiper-slide">
+                <img src="{{ asset('assets/images/pedramezzati_a_commercial_poster_for_website_horse_training__bl_cdf22caf-b057-4e99-ac58-5e0873f96a43.png') }}" alt="Third slide" class="img-fluid">
             </div>
         </div>
     </div>
-    
+
     <!-- Search Container -->
     <div class="search-container">
+            <form action="{{route('home.main')}}" method="GET">
+
         <div class="row g-3">
-            <div class="col-lg-4">
-                <input type="text" class="form-control" placeholder="@lang('lang.search_category')">
+            <div class="col-lg-11 col-md-6">
+                <input type="text" class="form-control" name="key" placeholder="@lang('lang.search_category')">
             </div>
-            <div class="col-lg-3">
-                <input type="text" class="form-control" placeholder="@lang('lang.location')">
-            </div>
-            <div class="col-lg-4">
-                <input type="text" class="form-control" placeholder="@lang('lang.keywords')">
-            </div>
-            <div class="col-lg-1">
+            <div class="col-lg-1 col-md-6">
                 <button class="btn search-btn w-100">
                     <i class="fas fa-search text-white"></i>
                 </button>
             </div>
+
         </div>
+            </form>
+
     </div>
 </div>
+
+<!-- Include Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+<!-- Include Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
 
 <!-- Categories Section -->
 <div class="categories-section">
     <div class="container">
-        <h2 class="section-title">@lang('lang.browse_categories')</h2>
+        <h2 class="section-title">@lang('lang.categories')</h2>
         <div class="row">
             @foreach ($categroy as $cat)
                 @if ($cat->parent_id == null)
@@ -165,7 +175,7 @@
 <!-- Featured Products Section -->
 <div class="featured-section">
     <div class="container">
-        <h2 class="section-title">@lang('lang.featured_products')</h2>
+        <h2 class="section-title">@lang('lang.feature_products')</h2>
         <div class="row g-4">
             @foreach ($products as $prd)
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -184,16 +194,15 @@
                 </div>
             @endforeach
         </div>
-        <div class="d-flex justify-content-center mt-4">
-            {{ $products->links() }}
-        </div>
+        
     </div>
 </div>
 
 <!-- Featured Ads Section -->
+<!-- Featured Ads Section -->
 <div class="featured-section bg-light">
     <div class="container">
-        <h2 class="section-title">@lang('lang.featured_ads')</h2>
+        <h2 class="section-title">@lang('lang.feature_advertisments')</h2>
         <div class="row">
             @foreach ($ads as $ad)
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -218,6 +227,7 @@
                 </div>
             @endforeach
         </div>
+        
     </div>
 </div>
 @endsection

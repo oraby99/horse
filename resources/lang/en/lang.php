@@ -76,7 +76,10 @@ return [
     'area'=>'Area',
     'search'=>'Search',
     'about_us_content'=>'The alfuraij website and application platform, affiliated with Abdulaziz Saud Al-Farij Company, is the first destination for office owners and property owners. Through it, you can search for apartments for rent, houses for sale, lands, or add an advertisement. Through our website or application, you can search through thousands of apartments and real estate offered for rent or for sale. Or for exchange in Kuwait directly from the owners or through real estate offices. Using the simplified search engine',
-    'feature_prop'=>'Featured properties',
+    'feature_products'=>'Feature Products',
+    'feature_advertisments'=>'Feature Advertisments',
+    'categories'=>'Categories',
+
     'app_name'=>'Al Fareej Real Estate Application',
     'useful_link'=>'Useful Links',
     'legal_pages'=>'Legal pages',

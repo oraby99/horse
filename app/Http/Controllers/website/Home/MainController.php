@@ -22,8 +22,8 @@ class MainController extends Controller
     public function main()
     {
         $categroy = category::all();
-        $ads      = Advertisment::all();
-        $products = Product::paginate(8);
+        $ads      = Advertisment::where('is_active',true)->take(8)->latest()->get();
+        $products = Product::take(8)->latest()->get();
         return view('welcome',compact( 'categroy','ads','products'));
     }
     public function contact()
@@ -42,6 +42,10 @@ class MainController extends Controller
     }
     public function home(Request $request)
     {
+        if(isset($request->key))
+        {
+            $data =   $this->model->where('name', 'LIKE', "%{$request->key}%")->where('is_active',true);
+        }
         $data = $this->model->with('user')->where('is_active',true)->filter($request->all())->latest()->paginate(6);
         $categroy = $this->category->all();
         return view('advertisment.index',['data'=>$data,'categories'=>$categroy]);
