@@ -14,7 +14,8 @@ class MainController extends Controller
 {
     protected $model;
     protected $area;
-    protected $category;    public function __construct(Advertisment $model , Category $category  )
+    protected $category;
+    public function __construct(Advertisment $model , Category $category  )
     {
         $this->model = $model;
         $this->category = $category;
@@ -24,6 +25,7 @@ class MainController extends Controller
         $categroy = category::all();
         $ads      = Advertisment::where('is_active',true)->take(8)->latest()->get();
         $products = Product::take(8)->latest()->get();
+    //  return $categroy;
         return view('welcome',compact( 'categroy','ads','products'));
     }
     public function contact()
@@ -42,12 +44,23 @@ class MainController extends Controller
     }
     public function home(Request $request)
     {
+        // return $request->all();
+        $query = $this->model->where('is_active',true);
+
         if(isset($request->key))
         {
-            $data =   $this->model->where('name', 'LIKE', "%{$request->key}%")->where('is_active',true);
+            if(isset($request->category_id))
+            {
+                $query->where('category_id',$request->category_id);
+            }
+            // if(isset($request->type))
+            // {
+            //     // $query->where('')
+            // }
         }
-        $data = $this->model->with('user')->where('is_active',true)->filter($request->all())->latest()->paginate(6);
+        $data = $query->with('user')->where('is_active',true)->filter($request->all())->latest()->paginate(6);
         $categroy = $this->category->all();
+        // return $categroy;
         return view('advertisment.index',['data'=>$data,'categories'=>$categroy]);
     }
     public function show($id)

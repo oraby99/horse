@@ -55,6 +55,7 @@ Route::get('/run-commands', function () {
 Route::get('/payment/success', [PaymentController::class, 'handleSuccess'])->name('payment.success');
 Route::get('/payment/failed', [PaymentController::class, 'handleFailed'])->name('payment.failed');
 
+
 ///////////////////////////////WEBSITE////////////////////////////////////
     Route::group(['middleware'=>'guest'],function(){
     Route::get('login',[AuthController::class,'loginView'])->name('login.view');
@@ -94,7 +95,7 @@ Route::get('/payment/failed', [PaymentController::class, 'handleFailed'])->name(
 
         Route::post('/add-to-cart/{id}',   [ControllersCartController::class, 'addToCart'])->name('addToCart');
         Route::get('/cart',                [ControllersCartController::class, 'showCart'])->name('cart');
-        Route::delete('/cart/{id}',        [ControllersCartController::class, 'removeItem'])->name('removeItem');
+        Route::get('/cart/delete/{id}',        [ControllersCartController::class, 'removeItem'])->name('removeItem');
         Route::post('/paymenttap',         [TapController::class, 'paymenttap'])->name('paymenttap');
         Route::get('/callbacktap',         [TapController::class, 'callbacktap'])->name('callbacktap');
 

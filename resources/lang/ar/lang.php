@@ -63,7 +63,6 @@ return [
     'overview'=>'ملخص',
     'category'=>'تصنيف',
     'categories'=>'تصنيفات',
-
     'Seller Information'=>'معلومات المعلن',
     'messages'=>'المحادثات',
     'select_conversetion'=>'اختر محادثة',
@@ -214,7 +213,13 @@ return [
     'licence'=>'الرخصه',
     'instegram_link' => 'الانستجرام',
     'optional' => 'اختيارى',
-    'profile'=> 'الملف الشخصى'
-
+    'profile'=> 'الملف الشخصى',
+    'product_feature'=>'المنتجات المميزة',
+    "ads_featured"=>'الاعلانات المميزة',
+    "years"=>'سنة',
+    "view_details"=>'التفاصيل',
+    "delete"=>'حذف',
+    "checkout"=>'ادفع',
+    "shopping_cart"=>"عربة التسوق"
 
 ];

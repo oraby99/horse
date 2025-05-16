@@ -50,61 +50,63 @@
 											<div class="ui-accordion-content rtcl-ajax-load"
 												>
 												<ul class='ui-link-tree is-collapsed overflow-hidden'>
-													{{-- @foreach ($categories as $item ) --}}
-													<li class='ui-link-tree-item ad-type-for_residential'><input
-														id='filters-ad-type-values-for_residential' name='category_ads_type'
-														value='1' type='radio'
-														class='ui-checkbox filter-submit-trigger'>@lang('lang.residential')</li>
+													@foreach ($categories as $item )
+														<li class='ui-link-tree-item ad-type-for_residential'><input
+															id='filters-ad-type-values-for_residential' name='category_id'
+															value='{{$item->id}}' type='radio'
+															class='ui-checkbox filter-submit-trigger'>{{$item->name}}
+														</li>
 
-													<li class='ui-link-tree-item ad-type-for_commercial'><input
-															id='filters-ad-type-values-for_commercial' name='category_ads_type'
-															value='3' type='radio'
-															class='ui-checkbox filter-submit-trigger'>@lang('lang.commercial')</li>
+														{{-- <li class='ui-link-tree-item ad-type-for_commercial'><input
+																id='filters-ad-type-values-for_commercial' name='category_ads_type'
+																value='3' type='radio'
+																class='ui-checkbox filter-submit-trigger'>@lang('lang.commercial')
+														</li>
 
-													<li class='ui-link-tree-item ad-type-for_commercial_unit'><input
-															id='filters-ad-type-values-for_commercial_unit' name='category_ads_type'
-															value='2' type='radio'
-															class='ui-checkbox filter-submit-trigger'>@lang('lang.commercial_units')</li>
+														<li class='ui-link-tree-item ad-type-for_commercial_unit'><input
+																id='filters-ad-type-values-for_commercial_unit' name='category_ads_type'
+																value='2' type='radio'
+																class='ui-checkbox filter-submit-trigger'>@lang('lang.commercial_units')</li>
 
-													<li class='ui-link-tree-item ad-type-investment'><input
-															id='filters-ad-type-values-investment' name='category_ads_type'
-															value='4' type='radio'
-															class='ui-checkbox filter-submit-trigger'>@lang('lang.investment')</li>
+														<li class='ui-link-tree-item ad-type-investment'><input
+																id='filters-ad-type-values-investment' name='category_ads_type'
+																value='4' type='radio'
+																class='ui-checkbox filter-submit-trigger'>@lang('lang.investment')</li>
 
-													<li class='ui-link-tree-item ad-type-industrial'><input
-															id='filters-ad-type-values-industrial' name='category_ads_type'
-															value='5' type='radio'
-															class='ui-checkbox filter-submit-trigger'>@lang('lang.industrial')</li>
-
-
-													<li class='ui-link-tree-item ad-type-chalet'><input
-															id='filters-ad-type-values-chalet' name='category_ads_type'
-															value='6' type='radio'
-															class='ui-checkbox filter-submit-trigger'>@lang('lang.chalet')</li>
-
-													<li class='ui-link-tree-item ad-type-farm'><input
-															id='filters-ad-type-values-farm' name='category_ads_type'
-															value='7' type='radio'
-															class='ui-checkbox filter-submit-trigger'>@lang('lang.farm')</li>
+														<li class='ui-link-tree-item ad-type-industrial'><input
+																id='filters-ad-type-values-industrial' name='category_ads_type'
+																value='5' type='radio'
+																class='ui-checkbox filter-submit-trigger'>@lang('lang.industrial')</li>
 
 
+														<li class='ui-link-tree-item ad-type-chalet'><input
+																id='filters-ad-type-values-chalet' name='category_ads_type'
+																value='6' type='radio'
+																class='ui-checkbox filter-submit-trigger'>@lang('lang.chalet')</li>
 
-													<li class='ui-link-tree-item ad-type-break'><input
-															id='filters-ad-type-values-break' name='category_ads_type'
-															value='8' type='radio'
-															class='ui-checkbox filter-submit-trigger'>@lang('lang.break')</li>
+														<li class='ui-link-tree-item ad-type-farm'><input
+																id='filters-ad-type-values-farm' name='category_ads_type'
+																value='7' type='radio'
+																class='ui-checkbox filter-submit-trigger'>@lang('lang.farm')</li>
 
 
-													<li class='ui-link-tree-item ad-type-lands'><input
-															id='filters-ad-type-values-lands' name='category_ads_type'
-															value='9' type='radio'
-															class='ui-checkbox filter-submit-trigger'>@lang('lang.lands')</li>
 
-													<li class="is-opener"><span class="rtcl-more"><i
-																class="rtcl-icon rtcl-icon-plus-circled"></i><span
-																class="text">Show More</span></span></li>
+														<li class='ui-link-tree-item ad-type-break'><input
+																id='filters-ad-type-values-break' name='category_ads_type'
+																value='8' type='radio'
+																class='ui-checkbox filter-submit-trigger'>@lang('lang.break')</li>
 
-															{{-- @endforeach --}}
+
+														<li class='ui-link-tree-item ad-type-lands'><input
+																id='filters-ad-type-values-lands' name='category_ads_type'
+																value='9' type='radio'
+																class='ui-checkbox filter-submit-trigger'>@lang('lang.lands')</li>
+
+														<li class="is-opener"><span class="rtcl-more"><i
+																	class="rtcl-icon rtcl-icon-plus-circled"></i><span
+																	class="text">Show More</span></span></li> --}}
+
+															@endforeach
 												</ul>
 
 											</div>

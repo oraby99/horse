@@ -153,15 +153,18 @@
         <h2 class="section-title">@lang('lang.categories')</h2>
         <div class="row">
             @foreach ($categroy as $cat)
+            {{-- @php
+                dd($categroy)
+            @endphp --}}
                 @if ($cat->parent_id == null)
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="category-card">
                             <img src="{{ asset('uploads/categories/' . $cat->image) }}" 
-                                 alt="{{$cat->name}}" 
-                                 class="w-100 h-100 object-fit-cover">
+                                alt="{{$cat->name}}" 
+                                class="w-100 h-100 object-fit-cover">
                             <div class="category-overlay position-absolute w-100 h-100 top-0 start-0">
-                                <div class="position-absolute bottom-0 w-100 p-3 text-white">
-                                    <h4 class="mb-0">{{$cat->name}}</h4>
+                                <div class="position-absolute bottom-0 w-100 p-3 z-30">
+                                    <h4 class="mb-0 text-black">{{$cat->name}}</h4>
                                 </div>
                             </div>
                         </div>
@@ -175,7 +178,7 @@
 <!-- Featured Products Section -->
 <div class="featured-section">
     <div class="container">
-        <h2 class="section-title">@lang('lang.feature_products')</h2>
+        <h2 class="section-title">@lang('lang.product_feature')</h2>
         <div class="row g-4">
             @foreach ($products as $prd)
                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -202,7 +205,7 @@
 <!-- Featured Ads Section -->
 <div class="featured-section bg-light">
     <div class="container">
-        <h2 class="section-title">@lang('lang.feature_advertisments')</h2>
+        <h2 class="section-title">@lang('lang.ads_featured')</h2>
         <div class="row">
             @foreach ($ads as $ad)
                 <div class="col-lg-3 col-md-4 col-sm-6">

@@ -216,5 +216,14 @@ return [
     'licence'=>'licence',
     'instegram_link'=> 'instegram link',
     'optional' => 'optional',
-     'profile'=> 'profile'
+     'profile'=> 'profile',
+    'product_feature'=>'Feature Products',
+    "ads_featured"=>'Feature Advertisment',
+    "years"=>'years',
+    "view_details"=>'Details',
+    "delete"=>'Delete',
+    "checkout"=>'CheckOut',
+    "shopping_cart"=>"Shopping Cart"
+
+
 ];
