@@ -13,14 +13,13 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Utils\SMS;
+use App\Jobs\SendOtp;
 use Exception;
 use Laravel\Sanctum\PersonalAccessToken;
 use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
-    //
-
     protected $model;
     public function __construct(User $model)
     {
@@ -73,8 +72,17 @@ class AuthController extends Controller
             $data['password'] = Hash::make($request->password);
             $data['remember_token'] = Str::random(64);
             $data['otp']  = $this->generateOtp();
+            
+            $json = [
+                'phoneNumber'=>$data['phone'],
+                'name'=>$data['name'],
+                'type'=>'whatsapp',
+                'custom_code'=>$data['otp']
+            ];
+      
             try{
                 $user = User::create($data);
+                SendOtp::dispatch($json);
                 return response()->json([
                     'status'  => 200,
                     'message' => 'SMS Sent',
@@ -154,12 +162,18 @@ class AuthController extends Controller
         $user = User::where('phone',$request->phone)->first();
         if($user)
         {
-            $user->update([
-                'otp'=>$otp,
-            ]);
             try{
-                // $message =  'Your Otp is'.$user->otp;
-                // $sms = SMS::sendSms($user->phone,$message);
+                            
+                $json = [
+                    'phoneNumber'=>$user->phone,
+                    'name'=>$user->name,
+                    'type'=>'whatsapp',
+                    'custom_code'=>$user->otp
+                ];
+                SendOtp::dispatch($json);
+                $user->update([
+                      'otp'=>$otp,
+                  ]);
                 return response()->json([
                     'status'  => 200,
                     'message' => 'SMS Sent',

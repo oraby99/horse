@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\website\Auth;
 
+use App\Jobs\SendOtp;
 use Exception;
 use App\Models\User;
 use App\Http\Utils\SMS;
@@ -48,11 +49,16 @@ class AuthController extends Controller
     public function register(RegisterRequest $request)
     {
         $data = $request->validated();
-        $data['otp'] = $this->generateOtp();
         $data['password'] = Hash::make($data['password']);
-        $message = 'Your Otp is ' . $data['otp'];
-        $sms = SMS::sendSms($data['phone'], $message);
+            $json = [
+                'phoneNumber'=>$data['phone'],
+                'name'=>$data['name'],
+                'type'=>'whatsapp',
+                'otp_length'=>5
+            ];
+        
         if (User::create($data)) {
+            SendOtp::dispatch($json);
             return redirect()->route('verify')->with(['success' => 'SMS Sent', 'phone' => $data['phone']]);
         } else {
             return redirect()->route('login')->with('error', 'Error occurred while registering.');
