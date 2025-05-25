@@ -20,7 +20,7 @@
                                     <div class="elementor-widget-container">
                                         <div class="elementor-shortcode">
                                             <div class="rtcl">
-                                                <form id="rtcl-lost-password-form" action="{{route('change-password')}}" class="form-horizontal"
+                                                <form id="rtcl-lost-password-form" action="{{route('change-password')}}" dir="{{App::getLocale() == 'ar' ? 'rtl' : 'ltr' }}" class="form-horizontal"
                                                     method="post">
                                                     @csrf
 
@@ -28,7 +28,7 @@
                                                     <div class="rtcl-form-group">
                                                         <label for="password" class="rtcl-field-label">
                                                             @lang('lang.password') </label>
-                                                        <input type="text" name="password"
+                                                        <input type="password" name="password"
                                                             id="password" class="rtcl-form-control"
                                                             required />
                                                     </div>
@@ -39,7 +39,7 @@
                                                     <div class="rtcl-form-group">
                                                         <label for="password_cinfirm" class="rtcl-field-label">
                                                             @lang('lang.password_confirmation') </label>
-                                                        <input type="text" name="password_confirmation"
+                                                        <input type="password" name="password_confirmation"
                                                             id="password_cinfirm" class="rtcl-form-control"
                                                             required />
                                                     </div>

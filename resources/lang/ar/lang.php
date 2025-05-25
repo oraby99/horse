@@ -220,6 +220,7 @@ return [
     "view_details"=>'التفاصيل',
     "delete"=>'حذف',
     "checkout"=>'ادفع',
-    "shopping_cart"=>"عربة التسوق"
+    "shopping_cart"=>"عربة التسوق",
+    'search_category'=>'بحث عام'
 
 ];

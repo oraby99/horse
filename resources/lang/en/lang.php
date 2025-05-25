@@ -223,7 +223,9 @@ return [
     "view_details"=>'Details',
     "delete"=>'Delete',
     "checkout"=>'CheckOut',
-    "shopping_cart"=>"Shopping Cart"
+    "shopping_cart"=>"Shopping Cart",
+    'search_category'=>'Search'
+
 
 
 ];
