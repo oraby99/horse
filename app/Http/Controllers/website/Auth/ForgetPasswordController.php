@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\website\Auth;
 
+use App\Jobs\SendOtp;
 use Exception;
 use App\Models\User;
 use App\Http\Utils\SMS;
@@ -17,24 +18,39 @@ class ForgetPasswordController extends Controller
     }
     public function sendOtp(Request $request)
     {
+        // return $request->all();
         $request->validate([
-            'phone'=>['required','starts_with:+965']
+            'phone'=>['required']
         ]);
 
         $data = $request->all();
         $data['otp'] = $this->generateOtp();
 
         try{
-            $message =  'Your Otp is '.$data['otp'];
-            $sms = SMS::sendSms($data['phone'],$message);
+       
+            // $message =  'Your Otp is '.$data['otp'];
+            // $sms = SMS::sendSms($data['phone'],$message);
             $user  = User::where('phone',$data['phone'])->first();
-            $user->update([
-                'otp'=>$data['otp'],
-            ]);
-            return redirect()->route('verify.view',$user->phone)->with('success','SMS Sent');
+            if($user)
+            {
+                $json = [
+                    'phoneNumber'=>$user->phone,
+                    'name'=>$user->name,
+                    'type'=>'whatsapp',
+                    'otp_length'=>5
+                ];
+                SendOtp::dispatch($json);
+                // $user->update([
+                //     'otp'=>$data['otp'],
+                // ]);
+                return redirect()->route('verify.view',$user->phone)->with('success','SMS Sent');
+     
+            }else{
+                return redirect()->back()->with('error','Invail Phone');
+            }
         }catch(Exception $e)
         {
-            return $e;
+            return $e->getMessage();
         }
 
     }
@@ -65,13 +81,20 @@ class ForgetPasswordController extends Controller
         try {
             $message = 'Your Otp is ' . $data['otp'];
             // Use $phone instead of $data['phone']
-            $sms = SMS::sendSms($phone, $message);
-
             $user = User::where('phone', $phone)->first();
-            $user->update([
-                'otp' => $data['otp'],
-            ]);
-            return redirect()->route('verify.view', $user->phone)->with('success', 'SMS Sent');
+            if($user)
+            {
+                 $json = [
+                    'phoneNumber'=>$user->phone,
+                    'name'=>$user->name,
+                    'type'=>'whatsapp',
+                    'otp_length'=>5
+                ];
+                SendOtp::dispatch($json);
+                return redirect()->route('verify.view', $user->phone)->with('success', 'SMS Sent');
+            }else{
+                return redirect()->back()->with('error','Invaild Phone User Not Found');
+            }
         } catch (Exception $e) {
             return $e;
         }

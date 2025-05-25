@@ -67,7 +67,7 @@
                                                         <div class="phone-input-container">
                                                             <img src="{{asset('assets/kuwait.png')}}" alt="Kuwait Flag" class="country-flag">
                                                             {{-- <span class="country-code">+965</span> --}}
-                                                            <input type="tel" id="phone" name="phone" placeholder="رقم الهاتف" class="phone-input" />
+                                                            <input type="tel" id="phone" name="phone" placeholder="رقم الهاتف" required class="phone-input" />
                                                         </div>
                                                         @error('phone')
                                                         <span style="color: red">{{$message}}</span>
