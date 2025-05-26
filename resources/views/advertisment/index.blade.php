@@ -200,7 +200,7 @@
                                 <div
                                     class="listing-grid-each listing-grid-each-8 listing-grid-each-9 rtcl-listing-item">
                                     <div class="rtin-item">
-                                        <div class="rtin-thumb">
+                                        {{-- <div class="rtin-thumb">
                                             <a class="rtin-thumb-inner rtcl-media"
                                                 href="{{route('advertisment.show',$item->id)}}"><img
                                                     loading="lazy" width="400" height="280"
@@ -229,7 +229,7 @@
                                                 </div>
                                             </div>
 
-                                        </div>
+                                        </div> --}}
                                         <div class="rtin-content">
 
                                             <div class="rtcl-listing-badge-wrap"></div>
