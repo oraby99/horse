@@ -14,22 +14,27 @@ class CartResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        // Ensure colors and size are arrays, with a fallback
+        $colors = $this->colors ? (is_string($this->colors) ? json_decode($this->colors, true) : $this->colors) : [];
+        $size = $this->size ? (is_string($this->size) ? json_decode($this->size, true) : $this->size) : [];
+
+        // Ensure product relationship exists, provide fallback values
+        $product = $this->product ?? null;
+        $images = $product && !empty($product->images) ? $product->images : [];
+
         return [
             'id' => $this->id,
-            'name' => $this->product->name,
-            'colors' => implode(', ', json_decode($this->colors)),
-            'size' => implode(', ', json_decode($this->size)),
-            'price' => $this->product->price,
-            'product_id' => $this->product->id,
-            'deliver_time' => $this->product->deliver_time,
-            'image' => $this->product->images != null ? asset('uploads/products/'.$this->product->images[0]) : asset('default.png'),
-            'count' => (int)$this->qantity,
-            'stock' => $this->product->stock,
-            'total' => number_format((float)$this->price * $this->qantity, 2),
-            'total_kwd' => number_format((float)$this->price_in_kwd * $this->qantity, 2),
+            'name' => $product ? $product->name : 'N/A',
+            'colors' => is_array($colors) ? implode(', ', $colors) : '',
+            'size' => is_array($size) ? implode(', ', $size) : '',
+            'price' => $product ? $product->price : 0,
+            'product_id' => $product ? $product->id : null,
+            'deliver_time' => $product ? $product->deliver_time : null,
+            'image' => !empty($images) ? asset('uploads/products/' . $images[0]) : asset('default.png'),
+            'count' => (int)($this->quantity ?? 0), // Fixed typo: qantity -> quantity
+            'stock' => $product ? $product->stock : 0,
+            'total' => number_format((float)($product ? $product->price * ($this->quantity ?? 0) : 0), 2),
+            'total_kwd' => number_format((float)($product ? $this->price_in_kwd * ($this->quantity ?? 0) : 0), 2),
         ];
     }
-
-
-
 }
