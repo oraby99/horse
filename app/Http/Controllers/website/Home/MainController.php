@@ -71,8 +71,8 @@ class MainController extends Controller
 
     public function showAds($id)
     {
-        $advertisment = Advertisment::findOrFail($id);
-        return view('advertisment.show_ads',compact('advertisment'));
+        $advertisement = Advertisment::findOrFail($id);
+        return view('advertisment.show_ads',compact('advertisement'));
     }
     public function create()
     {
