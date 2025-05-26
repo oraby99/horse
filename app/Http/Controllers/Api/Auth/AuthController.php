@@ -171,9 +171,6 @@ class AuthController extends Controller
                     'custom_code'=>$user->otp
                 ];
                 SendOtp::dispatch($json);
-                $user->update([
-                      'otp'=>$otp,
-                  ]);
                 return response()->json([
                     'status'  => 200,
                     'message' => 'SMS Sent',
