@@ -68,6 +68,12 @@ class MainController extends Controller
         $product = Product::findOrFail($id);
         return view('advertisment.show',compact( 'product' ) );
     }
+
+    public function showAds($id)
+    {
+        $data = Advertisment::findOrFail($id);
+        return view('advertisment.show_ads',compact('data'));
+    }
     public function create()
     {
         $categories = Category::all();

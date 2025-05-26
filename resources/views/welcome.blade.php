@@ -101,6 +101,100 @@
         height: 250px;
         object-fit: cover;
     }
+
+    /* Add this CSS to fix category name visibility */
+.categories-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.category-card {
+    position: relative;
+    height: 200px;
+    border-radius: 15px;  
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.1);
+}
+
+.category-overlay {
+    background: linear-gradient(
+        to bottom, 
+        transparent 0%, 
+        rgba(0,0,0,0.3) 50%, 
+        rgba(0,0,0,0.7) 100%
+    );
+    display: flex;
+    align-items: flex-end;
+    z-index: 1;
+}
+
+.category-overlay h4 {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin: 0;
+    z-index: 100;
+    position: relative;
+}
+
+/* Alternative styling if you prefer dark text */
+.category-overlay-light {
+    background: linear-gradient(
+        to bottom, 
+        transparent 0%, 
+        rgba(255,255,255,0.3) 50%, 
+        rgba(255,255,255,0.9) 100%
+    );
+}
+
+.category-overlay-light h4 {
+    color: #333 !important;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .category-card {
+        height: 150px;
+        margin-bottom: 20px;
+    }
+    
+    .category-overlay h4 {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+}
 </style>
 
 <!-- Hero Section with Swiper -->
@@ -153,28 +247,27 @@
         <h2 class="section-title">@lang('lang.categories')</h2>
         <div class="row">
             @foreach ($categroy as $cat)
-            {{-- @php
-                dd($categroy)
-            @endphp --}}
                 @if ($cat->parent_id == null)
                     <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="category-card">
+                        <a href="{{route('home.main')}}?category_id={{$cat->id}}">
+<div class="category-card" style="position: relative; height: 200px; margin-bottom: 20px; border-radius: 10px; overflow: hidden;">
                             <img src="{{ asset('uploads/categories/' . $cat->image) }}" 
                                 alt="{{$cat->name}}" 
-                                class="w-100 h-100 object-fit-cover">
-                            <div class="category-overlay position-absolute w-100 h-100 top-0 start-0">
-                                <div class="position-absolute bottom-0 w-100 p-3 z-30">
-                                    <h4 class="mb-0 text-black">{{$cat->name}}</h4>
-                                </div>
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                            <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); padding: 20px;">
+                                <h4 style="color: white; margin: 0; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+                                    {{$cat->name}}
+                                </h4>
                             </div>
                         </div>
+                        </a>
+                        
                     </div>
                 @endif
             @endforeach
         </div>
     </div>
 </div>
-
 <!-- Featured Products Section -->
 <div class="featured-section">
     <div class="container">
@@ -209,6 +302,7 @@
         <div class="row">
             @foreach ($ads as $ad)
                 <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="{{route('advertisment.show',$ad->id)}}">
                     <div class="product-card card">
                         @if ($ad->images && count($ad->images) > 0)
                             <img src="{{ asset('uploads/advertisments/' . $ad->images[0]) }}" class="card-img-top" alt="{{$ad->name}}">
@@ -227,6 +321,8 @@
                             @endif
                         </div>
                     </div>
+                    </a>
+                    
                 </div>
             @endforeach
         </div>

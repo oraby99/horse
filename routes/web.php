@@ -54,7 +54,7 @@ Route::get('/run-commands', function () {
 });
 Route::get('/payment/success', [PaymentController::class, 'handleSuccess'])->name('payment.success');
 Route::get('/payment/failed', [PaymentController::class, 'handleFailed'])->name('payment.failed');
-
+Route::get('advertisment/{id}',[MainController::class,'showAds'])->name('ads.show');
 
 ///////////////////////////////WEBSITE////////////////////////////////////
     Route::group(['middleware'=>'guest'],function(){
@@ -217,4 +217,3 @@ Route::get('/payment/failed', [PaymentController::class, 'handleFailed'])->name(
     });
     Route::resource('areas',AreaController::class);
 });
-
