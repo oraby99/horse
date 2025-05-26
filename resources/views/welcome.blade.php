@@ -305,7 +305,7 @@
                     <a href="{{route('advertisment.show',$ad->id)}}">
                     <div class="product-card card">
                         @if ($ad->images && count($ad->images) > 0)
-                            <img src="{{ asset('uploads/advertisments/' . $ad->images[0]) }}" class="card-img-top" alt="{{$ad->name}}">
+                            <img src="{{$ad->images[0] != null ?  asset('uploads/advertisments/' . $ad->images[0]) : asset('default.png') }}" class="card-img-top" alt="{{$ad->name}}">
                         @endif
                         <div class="card-body">
                             <h5 class="card-title">{{$ad->name}}</h5>

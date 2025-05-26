@@ -84,7 +84,7 @@ Route::get('advertisment/{id}',[MainController::class,'showAds'])->name('ads.sho
     Route::get('contact',[MainController::class,'contact'])->name('contact');
     Route::get('about',[MainController::class,'about'])->name('about');
     Route::get('terms',[MainController::class,'terms'])->name('terms');
-    Route::get('/advertisment/{id}', [MainController::class , 'show'])->name('advertisment.show');
+    Route::get('/advertisment/{id}', [MainController::class , 'showAds'])->name('advertisment.show');
     Route::get('/product/{id}', [MainController::class , 'show'])->name('product.show');
 
     Route::group(['middleware'=>'auth'],function(){
