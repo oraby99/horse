@@ -203,7 +203,7 @@
                                             <a class="rtin-thumb-inner rtcl-media"
                                                 href="{{route('advertisment.show',$item->id)}}"><img
 												loading="lazy" width="400" height="280"
-                                                    src="{{$item->images[0] != null ?  asset('uploads/advertisments/' . $item->images[0]) : asset('default.png') }}"
+                                                    src="{{$item->images != null ?  asset('uploads/advertisments/' . $item->images[0]) : asset('default.png') }}"
                                                     class="rtcl-thumbnail" alt="{{$item->name}}" decoding="async"
                                                     title="{{$item->name}}"></a>
 

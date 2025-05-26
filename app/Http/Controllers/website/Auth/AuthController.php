@@ -124,7 +124,7 @@ class AuthController extends Controller
     {
         Auth::logout();
         $request->session()->invalidate();
-        return redirect()->back()->with('success','Logout Succesfuly');
+        return redirect()->route('home')->with('success','Logout Succesfuly');
     }
     private function generateOtp()
     {

@@ -8,16 +8,21 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\website\ads;
 use App\Models\Country;
+use App\Models\Order;
 use App\Models\Product;
+use App\Services\HesabePaymentService;
+use Illuminate\Support\Facades\Redirect;
 
 class MainController extends Controller
 {
     protected $model;
     protected $area;
     protected $category;
-    public function __construct(Advertisment $model , Category $category  )
+    protected $hesabeService;
+    public function __construct(Advertisment $model , Category $category , HesabePaymentService $hesabeService )
     {
         $this->model = $model;
+        $this->hesabeService = $hesabeService;
         $this->category = $category;
     }
     public function main()
@@ -108,8 +113,36 @@ class MainController extends Controller
             $newVideo->move(public_path('uploads/advertisments/'), $newVideoName);
             $data['videos'] = $newVideoName;
         }
+        $sum = $data['price'] + 5 ;
+        $amount = number_format($sum, 3, '.', '');
+        $orderId = 'advertisment-' . uniqid() . time(); // Generate a unique order ID
+        // $order = new Order();
+        // $order->user_id =auth()->user()->id;
+        // // $order->address_id = 1;
+        // $order->total = $amount;
+        // $order->order_number = $orderId;
+        // $order->save();
+        $dataOrder = [
+            'user_id' => auth()->user()->id,
+            'order_number' => $orderId,
+            'total' => $amount,
+            'payment_status' => 'pending',
+        ];
 
-        $ads = Advertisment::create($data);
+        if (!$amount || $amount <= 0) {
+            return redirect()->route('payment.failed')->with('error', 'Invalid amount.');
+        }
+    
+        $returnUrl = route('payment.success');
+
+        try {
+            $responce = $this->hesabeService->createPayment($amount, $orderId, $returnUrl);
+            Advertisment::create(array_merge($data,$dataOrder));
+            return Redirect::to(config('hesabe.api_url').'payment?data='.$responce);
+            // return redirect($paymentUrl);
+        } catch (\Exception $e) {
+            return redirect()->route('payment.failed')->with('error', $e->getMessage());
+        }
         return redirect()->back()->with(['success' => 'Ads added successfully!']);
     }
 

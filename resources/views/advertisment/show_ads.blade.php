@@ -223,7 +223,7 @@
 
                 <!-- Action Buttons -->
                 <div class="mt-4">
-                    @auth
+                    {{-- @auth
                         @if(auth()->id() !== $advertisement->user_id)
                             <button type="button" 
                                     class="favorite-btn w-100 mb-2" 
@@ -231,7 +231,7 @@
                                 <i class="fas fa-heart"></i> Add to Favorites
                             </button>
                         @endif
-                    @endauth
+                    @endauth --}}
 
                     @if($advertisement->phone)
                         <a href="tel:{{ $advertisement->phone }}" class="contact-btn text-decoration-none">
