@@ -91,7 +91,7 @@
                                 <button type="button" onclick="updateQuantity({{ $index }}, 1)">+</button>
                             </div>
                         </td>
-                        <td>KWD<span id="itemTotal{{ $index }}">{{ number_format($itemTotal, 2) }}</span></td>
+                        <td>KWD<span id="itemTotal{{ $index }}">{{ number_format($itemTotal, 2) }} KWD</span></td>
                         <td>
                             <button class="btn btn-danger btn-sm" onclick="deleteCartItem({{ $cartItem->id }}, {{ $index }})">
                                 @lang('lang.delete')
