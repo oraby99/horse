@@ -230,6 +230,8 @@ return [
     'price'=>'price',
     'action'=>'action',
     'total'=>'Total',
+    'addtocart'=>'Add to Cart',
+
 
 
 
