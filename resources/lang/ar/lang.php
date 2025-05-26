@@ -221,6 +221,11 @@ return [
     "delete"=>'حذف',
     "checkout"=>'ادفع',
     "shopping_cart"=>"عربة التسوق",
-    'search_category'=>'بحث عام'
+    'search_category'=>'بحث عام',
+    'products'=>'المنتجات',
+    'quantity'=>'الكمية',
+    'price'=>'السعر',
+    'action'=>'العمليات',
+    'total'=>'المجموع',
 
 ];

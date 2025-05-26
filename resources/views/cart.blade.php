@@ -69,7 +69,7 @@
         <table class="table cart-table table-bordered">
             <thead>
                 <tr>
-                    <th>@lang('lang.product')</th>
+                    <th>@lang('lang.products')</th>
                     <th>@lang('lang.quantity')</th>
                     <th>@lang('lang.price')</th>
                     <th>@lang('lang.action')</th>

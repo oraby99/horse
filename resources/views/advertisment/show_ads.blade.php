@@ -97,7 +97,6 @@
         <div class="col-lg-8">
             <br>
             <div class="d-flex justify-content-between align-items-center mb-3">
-                <h2>{{ $advertisement->name }}</h2>
                 <div>
                     @if($advertisement->is_sold)
                         <span class="status-badge status-sold">SOLD</span>
@@ -155,9 +154,11 @@
 
         <!-- Sidebar with Advertisement Details -->
         <div class="col-lg-4">
-            <div class="sticky-top" style="top: 20px;">
+            <div class="sticky-top" style="top: 30px;">
                 <!-- Price -->
                 <div class="ad-info-item text-center">
+                <h4>{{ $advertisement->name }}</h4>
+
                     <h3 class="text-primary mb-0">
                         @if($advertisement->country)
                             {{ $advertisement->country->sign }}{{ number_format($advertisement->getPriceInCurrency($advertisement->country->sign, $advertisement->price), 2) }}

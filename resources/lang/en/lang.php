@@ -224,7 +224,13 @@ return [
     "delete"=>'Delete',
     "checkout"=>'CheckOut',
     "shopping_cart"=>"Shopping Cart",
-    'search_category'=>'Search'
+    'search_category'=>'Search',
+        'products'=>'products',
+    'quantity'=>'quantity',
+    'price'=>'price',
+    'action'=>'action',
+    'total'=>'Total',
+
 
 
 

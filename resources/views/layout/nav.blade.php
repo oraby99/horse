@@ -96,7 +96,8 @@
                         <div class="elementor-element elementor-element-4fefa6e elementor-widget__width-auto elementor-widget elementor-widget-heading"
                             data-id="4fefa6e" data-element_type="widget" data-widget_type="heading.default">
                             <div class="elementor-widget-container">
-                                <h2 class="elementor-heading-title elementor-size-default">+965 99661696
+                                <h2 class="elementor-heading-title elementor-size-default" dir="">
+                                    {{App::getLocale() == 'en' ? ' +96599661696' : ' 96599661696+'}}
                                      <i style="" aria-hidden="true" class="fas fa-phone-alt"></i>
                                 </h2>
                             </div>

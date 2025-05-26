@@ -51,7 +51,8 @@ class MainController extends Controller
         {
             if(isset($request->category_id))
             {
-                $query->where('category_id',$request->category_id);
+                $catagoryId = Category::where('parent_id',$request->category_id)->pluck('id')->toArray();
+                $query->whereIn('category_id',$catagoryId);
             }
             // if(isset($request->type))
             // {

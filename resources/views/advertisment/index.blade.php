@@ -195,24 +195,17 @@
 					<div class="">
 						<div class="row auto-clear">
                             @foreach ($data as $item )
-
                             <div class="col-xl-4 col-md-6 col-sm-6 col-12">
                                 <div
                                     class="listing-grid-each listing-grid-each-8 listing-grid-each-9 rtcl-listing-item">
                                     <div class="rtin-item">
-                                        {{-- <div class="rtin-thumb">
+                                        <div class="rtin-thumb">
                                             <a class="rtin-thumb-inner rtcl-media"
                                                 href="{{route('advertisment.show',$item->id)}}"><img
-                                                    loading="lazy" width="400" height="280"
-                                                    src="
-                                                    @if(count($item->adsImage) == 0)
-                                						https://admin.alfuraij.com/assets/images/default.jpg
-                                				    @else
-                                				        https://admin.alfuraij.com/uploads/ads/{{$item->adsImage[0]->image}}
-                                				    @endif
-                                                    "
-                                                    class="rtcl-thumbnail" alt="{{$item->title}}" decoding="async"
-                                                    title="{{$item->title}}"></a>
+												loading="lazy" width="400" height="280"
+                                                    src="{{$item->images[0] != null ?  asset('uploads/advertisments/' . $item->images[0]) : asset('default.png') }}"
+                                                    class="rtcl-thumbnail" alt="{{$item->name}}" decoding="async"
+                                                    title="{{$item->name}}"></a>
 
                                                     <div class="rtin-featured-ad">
                                                         <span class="badge rtcl-badge-featured">{{$item->ads_type}}</span>                </div>
@@ -229,13 +222,14 @@
                                                 </div>
                                             </div>
 
-                                        </div> --}}
+                                        </div>
                                         <div class="rtin-content">
 
                                             <div class="rtcl-listing-badge-wrap"></div>
 
-                                            <h3 class="rtin-title listing-title" title="{{$item->title}}"><a
-                                                    href="{{route('advertisment.show',$item->id)}}">{{$item->title}}</a></h3>
+                                            <h3 class="rtin-title listing-title" title="{{$item->name}}">
+												{{$item->name}}<a
+                                                    href="{{route('advertisment.show',$item->id)}}"></a></h3>
 
                                             <div class="rtin-cat-action">
                                                 {{-- <div class="rtin-cat-wrap">
