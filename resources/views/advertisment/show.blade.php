@@ -46,7 +46,7 @@
     }
 
     .CartBtn {
-        background-color: #ff6f61;
+        background-color: #555;
         color: #fff;
         border: none;
         padding: 0.8rem 1.5rem;
