@@ -111,7 +111,7 @@
 
             <!-- Main Image -->
             @if($advertisement->images && count($advertisement->images) > 0)
-                <img src="{{ asset('uploads/advertisements/' . $advertisement->images[0]) }}" 
+                <img src="{{ asset('uploads/advertisments/' . $advertisement->images[0]) }}" 
                      class="ad-image image-viewer" 
                      alt="{{ $advertisement->name }}">
                 
@@ -120,7 +120,7 @@
                     <div class="image-gallery">
                         @foreach($advertisement->images as $index => $image)
                             @if($index > 0) <!-- Skip first image as it's already shown as main -->
-                                <img src="{{ asset('uploads/advertisements/' . $image) }}" 
+                                <img src="{{ asset('uploads/advertisments/' . $image) }}" 
                                      class="gallery-image image-viewer" 
                                      alt="{{ $advertisement->name }}">
                             @endif
