@@ -91,7 +91,7 @@
                                 <button type="button" onclick="updateQuantity({{ $index }}, 1)">+</button>
                             </div>
                         </td>
-                        <td>KWD<span id="itemTotal{{ $index }}">{{ number_format($itemTotal, 2) }} KWD</span></td>
+                        <td>{{App::getLocale() == 'en' ? 'KWD' : 'د.ك'}}<span id="itemTotal{{ $index }}">{{ number_format($itemTotal, 2) }} </span></td>
                         <td>
                             <button class="btn btn-danger btn-sm" onclick="deleteCartItem({{ $cartItem->id }}, {{ $index }})">
                                 @lang('lang.delete')
@@ -107,7 +107,8 @@
 
     <div class="checkout-section">
         <div>
-            <h4>@lang('lang.total'): $<span id="cartTotal">{{ number_format($total, 2) }}</span></h4>
+            <h4>@lang('lang.Tax'): {{App::getLocale() == 'en' ? 'KWD' : 'د.ك'}}<span id="tax">{{ number_format(5, 2) }}</span></h4>
+            <h4>@lang('lang.total'): {{App::getLocale() == 'en' ? 'KWD' : 'د.ك'}}<span id="cartTotal">{{ number_format($total + 5, 2) }}</span></h4>
         </div>
         <form action="{{ route('pay') }}" method="POST">
             @csrf
@@ -135,6 +136,8 @@
         document.getElementById('itemTotal' + index).innerText = newTotal;
 
         recalculateCartTotal();
+        console.log(price);
+
     }
 
     function recalculateCartTotal() {

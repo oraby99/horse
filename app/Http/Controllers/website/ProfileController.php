@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\website;
 
 use App\Models\Advertisment;
+use App\Models\ProductFavourite;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\AdsFavourite;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -36,6 +39,19 @@ class ProfileController extends Controller
     public function edit()
     {
         return view('profile.edit');
+    }
+
+    public function deleteFav($id)
+    {
+        $data = AdsFavourite::findOrFail($id)->delete();
+        return redirect()->back()->with('success','deleted');
+    }
+
+    public function favouriteListing()
+    {
+        $dataAds = AdsFavourite::where('user_id',auth()->user()->id)->get();
+        $dataProduct = ProductFavourite::where('user_id',auth()->user()->id)->get();
+        return view('profile.favourite',['data'=>$dataAds,'dataProduct'=>$dataProduct]);
     }
     public function update(Request $request)
     {
@@ -78,4 +94,5 @@ class ProfileController extends Controller
         $data->delete();
         return redirect()->back()->with('success','Item Removed From Favourite');
     }
+
 }

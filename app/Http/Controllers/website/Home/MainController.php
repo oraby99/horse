@@ -49,7 +49,6 @@ class MainController extends Controller
     }
     public function home(Request $request)
     {
-        // return $request->all();
         $query = $this->model->where('is_active',true);
 
         if(isset($request->key))
@@ -64,9 +63,13 @@ class MainController extends Controller
             //     // $query->where('')
             // }
         }
-        $data = $query->with('user')->where('is_active',true)->filter($request->all())->latest()->paginate(6);
+        if( $request->get('category_id') == 1)
+        {
+            $data = Product::latest()->paginate(6);
+        }else{
+            $data = $query->with('user')->where('is_active',true)->filter($request->all())->latest()->paginate(6);
+        }
         $categroy = $this->category->all();
-        // return $categroy;
         return view('advertisment.index',['data'=>$data,'categories'=>$categroy]);
     }
     public function show($id)

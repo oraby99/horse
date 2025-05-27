@@ -63,11 +63,11 @@
                                                                 <a
                                                                     href="{{route('profile.favourite')}}">@lang('lang.favourite')</a>
                                                             </li>
-                                                            <li
+                                                            {{-- <li
                                                                 class="rtcl-MyAccount-navigation-link rtcl-MyAccount-navigation-link--chat rtcl-chat-unread-count">
                                                                 <a
                                                                     href="{{route('profile.chat')}}">@lang('lang.chat')</a>
-                                                            </li>
+                                                            </li> --}}
                                                             <li
                                                                 class="rtcl-MyAccount-navigation-link rtcl-MyAccount-navigation-link--payments">
                                                                 <a

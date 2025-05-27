@@ -28,7 +28,7 @@ class PaymentController extends Controller
       
 
         // converti price to payment format
-        $sum = $request->price + 5 ; 
+        $sum = $request->price ; 
         $amount = number_format($sum, 3, '.', '');
         $orderId = 'order-' . uniqid() . time(); // Generate a unique order ID
         // create pending order

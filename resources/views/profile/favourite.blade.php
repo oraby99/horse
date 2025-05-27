@@ -117,11 +117,11 @@
                                                                 <a
                                                                     href="{{route('profile.favourite')}}">@lang('lang.favourite')</a>
                                                             </li>
-                                                            <li
+                                                            {{-- <li
                                                                 class="rtcl-MyAccount-navigation-link rtcl-MyAccount-navigation-link--chat rtcl-chat-unread-count">
                                                                 <a
                                                                     href="{{route('profile.chat')}}">@lang('lang.chat')</a>
-                                                            </li>
+                                                            </li> --}}
                                                             <li
                                                                 class="rtcl-MyAccount-navigation-link rtcl-MyAccount-navigation-link--payments">
                                                                 <a
@@ -173,28 +173,21 @@
                                                                            <td>
                                                                                <div class="listing-thumb">
                                                                                    <a
-                                                                                       href="https://codedhosting.com/alfuraij/listing/apartment-for-buy/"><img
+                                                                                       href="{{route('advertisment.show',$item->id)}}"><img
                                                                                            loading="lazy"
                                                                                            decoding="async"
                                                                                            width="400"
                                                                                            height="280"
-                                                                                           src="
-                                                                                           @if(count($item->advertisments->adsImage) == 0)
-                                                                                               https://admin.alfuraij.com/assets/images/default.jpg
-                                                                                           @else
-                                                                                               https://admin.alfuraij.com/uploads/ads/{{$item->advertisments->adsImage[0]->image}}
-                                                                                           @endif
-                                                                                   
-                                                                                           "
+                                                                                           src="{{optional($item->advertisment)->images != null ?  asset('uploads/advertisments/' . $item->advertisment->images[0]) : asset('default.png') }}"
                                                                                            class="rtcl-thumbnail"
-                                                                                           alt="{{$item->advertisments->title}}"
+                                                                                           alt="{{optional($item->advertisment)->name}}"
                                                                                            title="" /></a>
                                                                                </div>
                                                                            </td>
                                                                            <td class="title-cell">
                                                                                <div class="rtcl-ad-details">
                                                                                    <a class="listing-title"
-                                                                                       href="">{{$item->advertisments->title}}</a>
+                                                                                       href="">{{optional($item->advertisment)->name}}</a>
                                                                                    <ul class="rtcl-meta">
                                                                                        <li>
                                                                                            <svg width="16"
@@ -208,7 +201,7 @@
                                                                                                    d="M7.99941 1.60002C4.46479 1.60002 1.59941 4.4654 1.59941 8.00002C1.59941 11.5346 4.46479 14.4 7.99941 14.4C11.534 14.4 14.3994 11.5346 14.3994 8.00002C14.3994 4.4654 11.534 1.60002 7.99941 1.60002ZM0.399414 8.00002C0.399414 3.80266 3.80205 0.400024 7.99941 0.400024C12.1968 0.400024 15.5994 3.80266 15.5994 8.00002C15.5994 12.1974 12.1968 15.6 7.99941 15.6C3.80205 15.6 0.399414 12.1974 0.399414 8.00002ZM7.99941 3.20002C8.33078 3.20002 8.59941 3.46865 8.59941 3.80002V7.6292L11.0677 8.86337C11.3641 9.01156 11.4843 9.37196 11.3361 9.66835C11.1879 9.96474 10.8275 10.0848 10.5311 9.93668L7.73108 8.53668C7.52781 8.43505 7.39941 8.22729 7.39941 8.00002V3.80002C7.39941 3.46865 7.66804 3.20002 7.99941 3.20002Z"
                                                                                                    fill="currentColor" />
                                                                                            </svg>
-                                                                                           {{\Carbon\Carbon::parse($item->advertisments->updated_at)->diffForHumans()}}
+                                                                                           {{\Carbon\Carbon::parse(optional($item->advertisment)->updated_at)->diffForHumans()}}
                                                                                        </li>
                                                                                        <li>
                                                                                            <svg width="16"
@@ -223,9 +216,9 @@
                                                                                                    fill="currentColor" />
                                                                                            </svg>
                                                                                            <a
-                                                                                               href="https://codedhosting.com/alfuraij/listing-category/investment-properties/apartments/">{{app()->getLocale() === 'en' ? $item->advertisments->category->name_en : $item->advertisments->category->name_ar}}</a>
+                                                                                               href="{{route('home.main')}}?category_id={{optional($item->advertisment)->category_id}}">{{ optional($item->advertisment)->category->name }}</a>
                                                                                        </li>
-                                                                                       <li>
+                                                                                       {{-- <li>
                                                                                            <svg width="16"
                                                                                                height="12"
                                                                                                viewBox="0 0 16 12"
@@ -238,7 +231,7 @@
                                                                                                    fill="currentColor" />
                                                                                            </svg>
                                                                                            {{$item->advertisments->getViews()}}
-                                                                                       </li>
+                                                                                       </li> --}}
                                                                                    </ul>
                                                                                    <div class="rtcl-listable">
                                                                                        <div
@@ -247,9 +240,9 @@
                                                                                                class="listable-label">Status</span>
                                                                                            <span
                                                                                                class="listable-value">
-                                                                                           @if ($item->advertisments->abroved == true)
+                                                                                           @if ($item->advertisment->is_active == true)
                                                                                                Published
-                                                                                           @elseif ($item->advertisments->abroved == false)
+                                                                                           @elseif ($item->advertisment->is_active == false)
                                                                                                Pending                                                                                  
                                                                                            @endif                                                                                            
                                                                                            
@@ -279,7 +272,7 @@
                                                                                <div
                                                                                    class="rtcl-price price-type-negotiable">
                                                                                    <span
-                                                                                       class="rtcl-price-amount amount">{{$item->advertisments->price}}<span
+                                                                                       class="rtcl-price-amount amount">{{$item->advertisment->price}}<span
                                                                                            class="rtcl-price-currencySymbol">&#x62f;.&#x643;</span></span>
                                                                                </div>
                                                                            </td>

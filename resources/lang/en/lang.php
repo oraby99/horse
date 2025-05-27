@@ -231,6 +231,8 @@ return [
     'action'=>'action',
     'total'=>'Total',
     'addtocart'=>'Add to Cart',
+    'Tax'=>'Tax',
+    'no_items_in_cart'=> 'No Items in Cart',
 
 
 

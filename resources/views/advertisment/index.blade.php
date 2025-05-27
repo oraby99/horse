@@ -201,11 +201,27 @@
                                     <div class="rtin-item">
                                         <div class="rtin-thumb">
                                             <a class="rtin-thumb-inner rtcl-media"
-                                                href="{{route('advertisment.show',$item->id)}}"><img
+                                                href="{{route('advertisment.show',$item->id)}}">
+												@php
+												 $image = asset('default.png');
+    
+    												// Check if $item->images exists and has at least 1 element
+    												if (isset($item->images) && is_array($item->images) && count($item->images) > 0) {
+    												    if (isset($_GET['category_id']) && $_GET['category_id'] == 1) {
+    												        $image = asset('uploads/products/' . $item->images[0]);
+    												    } else {
+    												        $image = asset('uploads/advertisments/' . $item->images[0]);
+    												    }
+    												}
+												@endphp
+				
+												<img
 												loading="lazy" width="400" height="280"
-                                                    src="{{$item->images != null ?  asset('uploads/advertisments/' . $item->images[0]) : asset('default.png') }}"
+                                                    src="{{$image}}"
                                                     class="rtcl-thumbnail" alt="{{$item->name}}" decoding="async"
-                                                    title="{{$item->name}}"></a>
+                                                    title="{{$item->name}}">
+
+												</a>
 
                                                     <div class="rtin-featured-ad">
                                                         <span class="badge rtcl-badge-featured">{{$item->ads_type}}</span>                </div>
