@@ -195,26 +195,30 @@
 					<div class="">
 						<div class="row auto-clear">
                             @foreach ($data as $item )
+							@php
+								$url = '';
+								$image = asset('default.png');
+    
+    							// Check if $item->images exists and has at least 1 element
+    							if (isset($item->images) && is_array($item->images) && count($item->images) > 0) {
+    							    if (isset($_GET['category_id']) && $_GET['category_id'] == 1) {
+    							        $image = asset('uploads/products/' . $item->images[0]);
+										$url = route('product.show',$item->id);
+    							    } else {
+    							        $image = asset('uploads/advertisments/' . $item->images[0]);
+										$url = route('advertisment.show',$item->id);
+    							    }
+    							}
+							@endphp
+				
                             <div class="col-xl-4 col-md-6 col-sm-6 col-12">
                                 <div
                                     class="listing-grid-each listing-grid-each-8 listing-grid-each-9 rtcl-listing-item">
                                     <div class="rtin-item">
                                         <div class="rtin-thumb">
                                             <a class="rtin-thumb-inner rtcl-media"
-                                                href="{{route('advertisment.show',$item->id)}}">
-												@php
-												 $image = asset('default.png');
-    
-    												// Check if $item->images exists and has at least 1 element
-    												if (isset($item->images) && is_array($item->images) && count($item->images) > 0) {
-    												    if (isset($_GET['category_id']) && $_GET['category_id'] == 1) {
-    												        $image = asset('uploads/products/' . $item->images[0]);
-    												    } else {
-    												        $image = asset('uploads/advertisments/' . $item->images[0]);
-    												    }
-    												}
-												@endphp
-				
+                                                href="{{$url}}">
+												
 												<img
 												loading="lazy" width="400" height="280"
                                                     src="{{$image}}"

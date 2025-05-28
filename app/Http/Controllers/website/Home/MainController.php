@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers\website\Home;
-
 use App\Models\Category;
 use App\Models\Advertisment;
 use Illuminate\Http\Request;
