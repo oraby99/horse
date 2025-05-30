@@ -52,19 +52,21 @@ class MainController extends Controller
     {
         $query = $this->model->where('is_active',true);
 
-        if(isset($request->key))
+        // if(isset($request->key))
+        // {
+           
+        //     // if(isset($request->type))
+        //     // {
+        //     //     // $query->where('')
+        //     // }
+        // }
+         if($request->get('category_id') == 2) 
         {
-            if(isset($request->category_id))
-            {
-                $catagoryId = Category::where('parent_id',$request->category_id)->pluck('id')->toArray();
-                $query->whereIn('category_id',$catagoryId);
-            }
-            // if(isset($request->type))
-            // {
-            //     // $query->where('')
-            // }
+            $catagoryId = Category::where('parent_id',$request->get('category_id'))->pluck('id')->toArray();
+            $data = $query->whereIn('category_id',$catagoryId)->paginate(6);
+
         }
-        if( $request->get('category_id') == 1)
+        elseif( $request->get('category_id') == 1)
         {
             $data = Product::latest()->paginate(6);
         }
