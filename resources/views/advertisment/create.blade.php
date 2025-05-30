@@ -190,7 +190,7 @@
                                           </div>
                                           <div class="col-sm-9 col-12">
                                             <div class="form-group">
-                                                <input   type="file" class="form-control" value="" name="images" id=""
+                                                <input   type="file" class="form-control" value="" name="images[]" id=""
                                                 >
                                             </div>
                                           </div>

@@ -250,7 +250,7 @@
                 @if ($cat->parent_id == null)
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <a href="{{route('home.main')}}?category_id={{$cat->id}}">
-<div class="category-card" style="position: relative; height: 200px; margin-bottom: 20px; border-radius: 10px; overflow: hidden;">
+                        <div class="category-card" style="position: relative; height: 200px; margin-bottom: 20px; border-radius: 10px; overflow: hidden;">
                             <img src="{{ asset('uploads/categories/' . $cat->image) }}" 
                                 alt="{{$cat->name}}" 
                                 style="width: 100%; height: 100%; object-fit: cover;">

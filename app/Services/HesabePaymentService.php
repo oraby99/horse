@@ -110,13 +110,13 @@ class HesabePaymentService
                 return $response;
             }
 
-            return ['status' => 'failed', 'message' => $response['message'] ?? 'Payment failed.'];
+            return ['status' => 'failed', 'message' => $response ?? 'Payment failed.'];
         } catch (\Exception $e) {
             \Log::error('Payment verification error: ' . $e->getMessage());
             return ['status' => 'error', 'message' => $e->getMessage()];
         }
     }
-    private function decryptData($encryptedData)
+    public function decryptData($encryptedData)
     {
         $decrypted = openssl_decrypt(
             base64_decode($encryptedData),

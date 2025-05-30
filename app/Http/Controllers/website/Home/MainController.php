@@ -2,9 +2,11 @@
 namespace App\Http\Controllers\website\Home;
 use App\Models\Category;
 use App\Models\Advertisment;
+use App\Traits\FilesTrait;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\website\ads;
+use App\Models\Camp;
 use App\Models\Country;
 use App\Models\Order;
 use App\Models\Product;
@@ -13,6 +15,7 @@ use Illuminate\Support\Facades\Redirect;
 
 class MainController extends Controller
 {
+    use FilesTrait;
     protected $model;
     protected $area;
     protected $category;
@@ -64,6 +67,10 @@ class MainController extends Controller
         if( $request->get('category_id') == 1)
         {
             $data = Product::latest()->paginate(6);
+        }
+        elseif($request->get('category_id') == 4)
+        {
+            $data = Camp::where('is_active',1)->latest()->paginate(6);
         }else{
             $data = $query->with('user')->where('is_active',true)->filter($request->all())->latest()->paginate(6);
         }
@@ -81,6 +88,12 @@ class MainController extends Controller
         $advertisement = Advertisment::findOrFail($id);
         return view('advertisment.show_ads',compact('advertisement'));
     }
+
+    public function showCamp($id)
+    {
+        $camp = Camp::findOrFail($id);
+        return view('advertisment.show_camps',compact('camp'));
+    }
     public function create()
     {
         $categories = Category::all();
@@ -90,14 +103,16 @@ class MainController extends Controller
     public function storeadd(Request $request)
     {
         $data = $request->all();
+        // return $data;
         $data['user_id'] = auth()->user()->id;
 
         $imageNames = [];
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
-                $newImageName = "advertisments-" . uniqid() . '.' . $image->getClientOriginalExtension();
-                $image->move(public_path('uploads/advertisments/'), $newImageName);
-                $imageNames[] = $newImageName;
+                $imageNames [] = $this->saveFile($image , config('filepath.ADVERTISMENT_PATH'));
+                // $newImageName = "advertisments-" . uniqid() . '.' . $image->getClientOriginalExtension();
+                // $image->move(public_path('uploads/advertisments/'), $newImageName);
+                // $imageNames[] = $newImageName;
             }
         }
         $data['images'] = $imageNames;
@@ -108,13 +123,23 @@ class MainController extends Controller
                 if (file_exists($oldVideoPath)) {
                     unlink($oldVideoPath);
                 }
+
             }
             $newVideo = $request->file('videos');
-            $newVideoName = "advertisments-" . uniqid() . '.' . $newVideo->getClientOriginalExtension();
-            $newVideo->move(public_path('uploads/advertisments/'), $newVideoName);
-            $data['videos'] = $newVideoName;
+        
+            // $newVideoName = "advertisments-" . uniqid() . '.' . $newVideo->getClientOriginalExtension();
+            // $newVideo->move(public_path('uploads/advertisments/'), $newVideoName);
+            $data['videos'] = $this->saveFile($newVideo,'uploads/advertisments');
         }
-        $sum = $data['price'] + 5 ;
+        $sum = 0;
+        if($data['ads_type'] == 'normal')
+        {
+            $sum = 5;
+        }else if($data['ads_type'] == 'special')
+        {
+            $sum = 7;
+        }
+        // $sum = $data['price'] + 5 ;
         $amount = number_format($sum, 3, '.', '');
         $orderId = 'advertisment-' . uniqid() . time(); // Generate a unique order ID
         // $order = new Order();

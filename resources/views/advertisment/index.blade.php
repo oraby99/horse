@@ -204,7 +204,12 @@
     							    if (isset($_GET['category_id']) && $_GET['category_id'] == 1) {
     							        $image = asset('uploads/products/' . $item->images[0]);
 										$url = route('product.show',$item->id);
-    							    } else {
+    							    }
+									else if (isset($_GET['category_id']) && $_GET['category_id'] == 4 ){
+      									$image = asset('uploads/camps/' . $item->images[0]);
+										$url = route('camps.show',$item->id);
+									} 
+									else {
     							        $image = asset('uploads/advertisments/' . $item->images[0]);
 										$url = route('advertisment.show',$item->id);
     							    }

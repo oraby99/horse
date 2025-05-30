@@ -147,8 +147,8 @@
             const itemTotal = parseFloat(document.getElementById('itemTotal' + idx)?.innerText || 0);
             total += itemTotal;
         });
-
-        document.getElementById('cartTotal').innerText = total.toFixed(2);
+        let displayTotal = total + 5
+        document.getElementById('cartTotal').innerText = displayTotal.toFixed(2);
         document.getElementById('hiddenTotal').value = total.toFixed(2);
     }
 

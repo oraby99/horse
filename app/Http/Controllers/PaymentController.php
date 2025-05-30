@@ -28,7 +28,7 @@ class PaymentController extends Controller
       
 
         // converti price to payment format
-        $sum = $request->price ; 
+        $sum = $request->price + 5  ; 
         $amount = number_format($sum, 3, '.', '');
         $orderId = 'order-' . uniqid() . time(); // Generate a unique order ID
         // create pending order
@@ -120,6 +120,10 @@ class PaymentController extends Controller
 
     public function handleFailed(Request $request)
     {
+        if(isset($_GET['data']))
+        {
+            return $this->hesabeService->verifyPayment($request->all());
+        }
         if(isset($request->order_number))
         {
             Order::where('order_number',$request->order_number)->delete();

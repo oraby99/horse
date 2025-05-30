@@ -55,6 +55,7 @@ Route::get('/run-commands', function () {
 Route::get('/payment/success', [PaymentController::class, 'handleSuccess'])->name('payment.success');
 Route::get('/payment/failed', [PaymentController::class, 'handleFailed'])->name('payment.failed');
 Route::get('advertisment/{id}',[MainController::class,'showAds'])->name('ads.show');
+Route::get('camps/{id}',[MainController::class,'showCamp'])->name('camps.show');
 
 ///////////////////////////////WEBSITE////////////////////////////////////
     Route::group(['middleware'=>'guest'],function(){

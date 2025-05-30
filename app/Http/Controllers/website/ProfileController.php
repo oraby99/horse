@@ -7,6 +7,8 @@ use App\Models\ProductFavourite;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\AdsFavourite;
+use App\Models\Order;
+use App\Models\OrderItem;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
@@ -34,7 +36,10 @@ class ProfileController extends Controller
     }
     public function payment()
     {
-        return view('profile.payment');
+        $orderItems = OrderItem::whereHas('order', function ($query) {
+            $query->where('user_id', auth()->id());
+        })->with(['order','product'])->paginate(10);
+        return view('profile.payment',['order'=>$orderItems]);
     }
     public function edit()
     {
@@ -52,6 +57,12 @@ class ProfileController extends Controller
         $dataAds = AdsFavourite::where('user_id',auth()->user()->id)->get();
         $dataProduct = ProductFavourite::where('user_id',auth()->user()->id)->get();
         return view('profile.favourite',['data'=>$dataAds,'dataProduct'=>$dataProduct]);
+    }
+
+    public function getPaymentDetails()
+    {
+     
+        // return view('profile.payment', ['order' => $order]);
     }
     public function update(Request $request)
     {
